@@ -15,5 +15,5 @@ mysqli_select_db($conn , 'Team6') or die ('Database will not open');
 
 
 
-mysqli_close ($conn);
+
 ?>

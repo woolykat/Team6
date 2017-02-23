@@ -1,0 +1,14 @@
+Notes:
+
+
+Log In info:
+
+
+Username:Team6
+Password: te8AJUJZ
+
+
+
+// Log In PHP tutorial //
+
+https://code.tutsplus.com/tutorials/user-membership-with-php--net-1523

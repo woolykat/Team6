@@ -1,0 +1,37 @@
+
+form{
+background: #800000;
+    color: white;
+ margin: 75% 30%;
+} 
+
+#LeftSplit{
+background: #800000;
+display: inline-block;
+    width:50%;
+    height: 100%;
+    position: fixed;
+}
+
+p{
+float: right;
+    color: black;
+    margin-top: -100px;
+    position: absolute;
+    top: 50%;
+    margin-left: 65%;
+
+}
+h3{
+float: right;
+    color: black;
+    margin-top: -100px;
+    position: absolute;
+    top: 45%;
+    margin-left: 70%;
+
+}
+#logInLogo{
+float: right;
+margin-right:10%;
+}
