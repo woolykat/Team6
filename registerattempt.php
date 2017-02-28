@@ -13,6 +13,7 @@ include "base.php";
 $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
+$PasswordComfirmation = $_POST['PasswordConfirmation'];
 
   
       $register="INSERT INTO users(username, email, password) VALUES('$username', '$email', '$password')";

@@ -1,0 +1,54 @@
+
+h1{
+color: white;
+    text-align: center;
+    margin-top: 45%;
+}
+table{
+background: #800000;
+    color: white;
+ margin: 0 auto;
+} 
+
+#LeftSplit{
+background: #800000;
+display: inline-block;
+    width:50%;
+    height: 100%;
+    position: fixed;
+}
+
+#rightsplit{
+  float:right;
+    width:50%;
+    height: 100%;
+    background-color: white;  
+    margin-top: 22%;
+}
+
+
+#rightsplit p{
+
+  text-align: center;
+    color: black;
+  padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+#rightsplit h3{
+padding-left: 10px;
+    padding-right: 10px;
+  text-align: center;
+    color: black;
+  
+}
+
+#logInLogo{
+float: right;
+margin-right:10%;
+}
+
+input checkbox{
+margin: 0 auto;
+}

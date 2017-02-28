@@ -1,0 +1,43 @@
+body {
+    width: 100%;
+    margin:auto 0;
+    font-family: 'Oswald';
+}
+
+main p {
+    margin: 0 auto;
+    text-align: justify;
+    font-size: 20px;
+}
+
+header {
+    margin:0 auto;
+}
+
+main {
+    margin:0 auto;
+     max-width: 900px;
+}
+
+footer {
+    
+}
+
+h1 { 
+   font-family: 'Oswald', sans-serif;
+   font-size: 90px;
+   color: #4c4c4c;
+   letter-spacing:5px;
+   text-align: center;
+   width:100%;
+   margin-top:150px;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    text-align: left;
+    color: #4c4c4c;
+    padding-top: 30px;
+    margin-top: 0px;
+}

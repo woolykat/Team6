@@ -2,22 +2,21 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/register.css">
-    <title>Registration</title>
+    
+    <script src="jquery/jquery-3.1.1.min.js"></script>
+    <title>LogIn</title>
     </head>
 <body>
     <div id="LeftSplit">
     <div class="header">
 
-    <h1>Please Register</h1>
+    <h1>Please Login</h1>
     </div>
     
-    <form method="post" action="registerattempt.php">
+    <form method="post" action="login.php">
     
     <table>
-        <tr>
-        <td>Username:</td>
-        <td><input type="text" name="username"></td>
-            </tr>
+     
         
         
         
@@ -35,29 +34,24 @@
             </tr>
         
         
-         <tr>
-        <td>Password confirmation:</td>
-        <td><input type="text" name="PasswordConfirmation"></td>
-            </tr>
         
    <tr>
         <td></td>
+          <td><input type="submit" name="LogIn" value="Login"></td>
         <td><input type="submit" name="registerButton" value="Register"></td>
+     
         </tr>
         
         </table>
     
-    
+     <input type="checkbox" checked="checked"> Remember me
+  </div>
     </form>
         </div>
     <div id="rightsplit">
     <div id="RegisterPageParagraphs">
-    <h3>Please Register! Its quick easy and only takes a moment!</h3>
-    <p>This will allow you to view access to your own online profile.</p>
+    <h3>Please Login!</h3>
     
-    <p>Not to mention the ability to track the amount of volunteer hours you've done!</p>
-        <p>Get rewards for your volunteer hours!</p>
-        <p>Easy to find volunteer oppurtunties for you with volunteer track! </p>
     </div>
     </div>
     </body>
