@@ -30,6 +30,8 @@ include"php/base.php";
     </header>
     
 <main>
+   
+    
 
 <div class="intro">
       <iframe src="https://www.youtube.com/embed/zYPc03_1ifs" allowfullscreen></iframe>
@@ -59,9 +61,11 @@ or die ('Invalid Query');
 
 if (mysqli_num_rows($result) > 0) {
     while($row=mysqli_fetch_assoc($result)) {
+        
+       
       //  echo "opportunity name: " . $row["opportunity_name"]. "<br/>";
          ?>
-<a href="<?php echo $row["opportunityID"]; ?>.php"><?php echo $row["opportunity_name"]; ?></a><br />
+<a href="./displaypage.php?data=<?php echo $row["opportunityID"]; ?>"><?php echo $row["opportunity_name"]; ?></a><br />
 <?php
     }
    
@@ -79,13 +83,19 @@ else {
 mysqli_close ($conn);
      }
 ?>  
-            
+         
             
             
         </main>
             
         <footer>Copyright Volunteer Track</strong></footer>
       </div>
-        
+        <script>
+// When the user clicks on <div>, open the popup
+function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
+</script>
         </body>
 </html>

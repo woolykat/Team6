@@ -8,39 +8,25 @@ Parts worked on:
 
 
 <?php
-include "base.php";
-session_start();
-
-if(isset($_POST["submit"])){
-$email = $_POST ['email'];
-    $password = $_POST['password'];
-    
-$query mysqli_query (" SELECT * FROM users WHERE email ='"$email"' AND password ='"$password"'");
+include "PHP/base.php";
+    session_start();
+$username = $_POST['username'];
+$email = $_POST['email'];
+$password = $_POST['password'];
 
 
-$numrows =  mysql_num_rows($query);
-if($numrows!=0)
-{
-while ($row = mysqli_fetch_assoc($query))
-{
-$dbemailname = $row['email'];
-    $dbpassword = $row['password'];
-
-}
-    
-    if ($email == $dbemailname && $dbpassword)
-    {
-    session_start['sess_email']=$email;
-        header("Location:")
-    
-    }
-}
-
-}
+mysqli_query($conn, "SELECT * FROM users ".$username."");
 
 
-}
+
+
+
+      echo("<br>Welcome Back $username");
+
+
+
+
+ mysqli_close($conn);
 ?>
-
 
 
