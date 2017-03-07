@@ -1,0 +1,25 @@
+Notes:
+
+
+Log In info:
+
+
+Username:Team6
+Password: te8AJUJZ
+
+
+
+// Log In PHP tutorial //
+
+https://code.tutsplus.com/tutorials/user-membership-with-php--net-1523
+
+COLOUR SCHEME (see image: colour scheme.jpg in the media folder for a visual):
+
+red colour: #DA1B3A
+yellow/gold: #F4CB01
+light turquoise: #A4DDD4;
+
+
+Heading Font:   <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">   font-family: 'Oswald', sans-serif;
+
+Search button colour:  #4CAF50
