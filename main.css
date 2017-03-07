@@ -1,0 +1,260 @@
+body {
+padding: 0;
+    margin: 0;
+ width: 100%;
+}
+
+
+#container{
+    margin:0 auto;
+
+    background-color:#A4DDD4;
+   
+}
+
+header{
+  
+    color:black;
+  
+    border: 0px;
+    font-family: 'Anton', sans-serif;
+}
+header img{
+height: 150px;
+    padding-left: 2%;
+}
+header h1{
+ padding-right:3%;
+font-size: 70;
+text-align: right;
+}
+
+.intro p{
+padding-left: 5%;
+padding-right: 5%;
+}
+
+
+main {
+    margin: 0 auto;
+ background-color: white;
+    max-width:75%;
+    
+    
+    
+}
+
+.FeaturedCampaigns{
+    margin:0 auto;
+width: 100%;
+  
+
+}
+h2{
+text-align: center;
+font-family: 'Oswald', sans-serif;
+}
+h3{
+font-family: 'Oswald', sans-serif;
+}
+
+.FeaturedCampaigns h3{
+font-size: 20;
+    font-family: 'Anton', sans-serif;
+
+}
+
+
+p{
+
+text-align: center;
+
+}
+#LeftStyle{
+    margin: 0 auto;
+    wdith:50%;
+
+    
+
+}
+#LeftStyle img{
+ float: left;
+    display: inline-block;
+width:500px;
+   padding-left: 5%;
+   padding-right: 5%;
+
+}
+ #LeftStyle p{
+text-align: center;
+  display: inline-block;
+     font-size: 24;
+      
+}
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    border: 0px solid #fee76f;
+    background-color: #F4CB01;
+    
+}
+
+li {
+    float: right;
+  
+ 
+}
+
+li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+   
+}
+
+li a:hover:not(.active) {
+    background-color: #fee76f;
+
+}
+
+li a.active {
+    color: white;
+    background-color: #4CAF50;
+  
+}
+
+
+
+.intro {
+    
+    margin:0px auto;
+    padding: 0px;
+    border-width:0px;
+}
+
+
+footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1em;
+  background-color: #efefef;
+  text-align: center;
+}
+
+
+.logo {
+    float:left;
+}
+
+a {
+    color:#b20000;
+}
+#search {
+    
+  margin:0 auto;
+    text-align:center;
+  max-width:1080px;
+    
+    
+}
+.searchresults {
+    font-size:30px;
+        margin:0 auto;
+    
+    text-align:center;
+    max-width:400px;
+    line-height:50px;
+}
+.searchresults span {
+    text-align: center;
+    line-height:1em;
+    font-size:18px;
+    padding-left: 5%;
+}
+input[type=text], select {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    text-align:center;
+    margin:0 auto;
+    width: 400px;
+    background-color: #4CAF50;
+    color: white;
+    font-size:16px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+    
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#submitbutton{
+    margin: 0 auto;
+}
+form{
+    margin:0 auto;
+}
+
+table{
+margin:0 auto;
+    padding-left: 10%;
+    padding-bottom: 0px;
+}
+
+tr, td {
+    object-position: center;
+    
+}
+
+table textarea{
+    width: 300px;
+}
+
+table text{
+    width: 300px;
+}
+
+table{
+margin:0 auto;
+    padding-left: 10%;
+}
+
+th, td {
+    
+    padding-bottom: 15px;
+    text-align: left;
+    
+}
