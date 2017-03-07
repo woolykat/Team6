@@ -1,0 +1,58 @@
+
+
+<html>
+
+<head>
+    <title>User Login</title>
+<link rel="stylesheet" href="index.css" type="text/css";>
+<script type="text/javascript">
+    function check_info(){
+    var email =  document.getElementById('email').value;
+    var password =  document.getElementById('password').value;
+        if (email == "" || password ==""){
+            alert('Please fill in all fields');
+            return false;
+        }
+    else{
+    return true;
+    }
+    }
+    
+    </script>
+</head>
+
+<body>
+    
+    
+    <div class="container">
+			<div id="LeftSplit">
+<div class="container">
+    
+    <form action="index.php" method="post" onsubmit="return check_info();">
+   	Email<input type="text" name="email" id="email">
+    <br><br>
+   	Password <input type="password" name="password" id="password">
+    <br><br>
+   	<input type="submit" value="Login">
+</form>
+
+    
+
+    
+   
+    
+</div>
+                
+                 
+                    </div>
+                </div>
+        </div>
+    </div>
+
+<img src="logo.jpg" alt="Logo" id="logInLogo">
+
+<h3> Volunteer Track!</h3>
+<p> We're here to keep you on the right track!</p>
+</body>
+
+</html>

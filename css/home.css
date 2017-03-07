@@ -6,9 +6,9 @@ body{
     
     
 }
-#container {
-    width:100%;
-    
+#container{
+   width:95%;
+    padding-right:60px;
 }
 
 #leftSplit{
@@ -16,10 +16,11 @@ body{
   position: absolute;
   left: 0px;
   width: 70%;
+    padding:60px;
 }
 #leftSplit p {
     font-size:20px;
-    line-height:80px;
+    line-height:30px;
 }
 
 #rightSplit {
@@ -47,6 +48,24 @@ body{
     height:40px;
     
 }
+h1 { 
+   font-family: 'Oswald', sans-serif;
+   font-size: 130px;
+   color: #000;
+   letter-spacing:5px;
+    margin-top:0px;
+    margin-bottom:0px;
+}
+
+h2 {
+   font-family: 'Oswald', sans-serif;
+   font-size: 70px;
+   color: #000;
+   letter-spacing:5px;
+    margin-top:0px;
+    margin-bottom:0px;
+}
+
 
 label {
     float:left;
@@ -111,4 +130,60 @@ input[type=submit] {
     color:black;
     height:40px;
 }
+
+header {
+    padding-top:250px;
+    padding-right:30px;
+    height: 100vh;
+    
+}
+    
+#trackSection {
+    padding-top:250px;
+    padding-right:30px;
+    height: 100vh;
+}
+
+#trackSection p {
+     max-width:800px;
+    float:right;
+}
+
+#opportunitySection {
+    padding-top:250px;
+    padding-right:30px;
+    height: 100vh;
+}
+
+#opportunitySection p {
+    max-width:800px;
+    float:left;
+}
+
+#rewardSection {
+      padding-top:250px;
+    padding-right:30px;
+    height: 100vh;
+}
+
+.arrow {
+      padding-top:450px;
+      text-align: center; 
+}
+
+.fa {
+    font-size:50px; 
+    color: #000;
+    display: inline-block;
+    text-align: center;
+}
+
+#womanOpportunity {
+    float:right;
+}
+
+#womanTrack {
+    float:left;
+}
+
 
