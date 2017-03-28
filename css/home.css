@@ -2,51 +2,81 @@ body{
     font-size:16px;
   margin:0;
     padding:0;
-    font-family:sans-serif;
-    
+    font-family:sans-serif;  
     
 }
-#container {
-    width:100%;
-    
+
+#container{
+   width:95%;
+    padding-right:60px;
 }
 
 #leftSplit{
-    background-color: white;
+    
   position: absolute;
   left: 0px;
   width: 70%;
+   
 }
 #leftSplit p {
-    font-size:20px;
-    line-height:80px;
+    font-size:22px;
+    line-height:35px;
+     padding:60px;
 }
 
 #rightSplit {
-   background-color: #DA1B3A;
-    border-left:10px solid #DA1B3A;
+   background-color: #F4CB01;
+    border-left:10px solid #F4CB01;
   position: fixed;
   right: 0px;
   width: 30%;
   height:100%;
-    color:white;
+    color:black;
 }
 .verticalCenter{
   margin-top:50%;  
- margin-left:25%;
+
     font-size:20px;
     
 }
 .register {
- background-color:#A4DDD4;
+ background-color:white;
     border:none;
     border-radius:4px;
-    width:500px;
+    max-width:300px;
     font-size:16px;
-    color:black;
+    color:#3b3d3f;
     height:40px;
     
 }
+h1 { 
+    
+    font-weight: 100;
+   font-family: 'Mrs Sheppards', cursive;
+       font-size: 25vmin;
+   color: white;
+   letter-spacing:5px;
+    margin-top:-100px;
+    margin-bottom:0px;
+    text-align: center;
+    padding-bottom: 300px;
+}
+
+h1 span {
+        font-size: 30vmin;
+    margin-top:100px;
+}
+
+h2 {
+   font-family: 'Oswald', sans-serif;
+   font-size: 70px;
+   color: #000;
+   letter-spacing:5px;
+    margin-top:0px;
+    margin-bottom:0px;
+    margin-right:30px;
+}
+
 
 label {
     float:left;
@@ -57,7 +87,12 @@ label {
     overflow:auto;
        
 }
-
+#loginform ul li{
+    display:block;
+    list-style-type:none;
+    
+    
+}
 
 label span {
     text-align:center;
@@ -70,45 +105,157 @@ label input {
     position:absolute;
     top:-20px;
 }
+input[type="checkbox"] + span {
+ color:black;
+
+}
 
 input:checked + span {
     background-color:#404040;
-    color:#F7F7F7;
+    color:white;
+	 font-size:20px;
 }
 
 /* Full-width inputs */
 input[type=text], input[type=password] {
-    width: 500px;
+    
+	  min-width:500px;
+    max-width:500px;
     padding: 12px 20px;
     margin: 8px 0;
-    display: inline-block;
     border-top:none;
     border-left:none;
     border-right:none;
     border-bottom: 1px solid #ccc;
     box-sizing: border-box;
-    background-color:#DA1B3A;
-    color:white;
+    background-color:#F4CB01;
+    color:black;
     font-size:16px;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    black;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    black;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    black;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    black;
 }
 
 /* Set a style for all buttons */
 button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 500px;
+	  width:300px;
 }
 input[type=submit] {
-    background-color:#A4DDD4;
+
+    background-color:#3b3d3f;
     border:none;
     border-radius:4px;
-    width:500px;
+    width:300px;
     font-size:16px;
-    color:black;
+    margin-top:20px;
+    color:white;
     height:40px;
+	margin-bottom:20px;
+}
+
+header {
+
+    background-image:url('../images/BGimage.png');
+    background-position: center;
+    background-size: 100vh;
+    background-repeat: no-repeat; 
+    background-size:cover;
+    height: 100vh;
+
+}
+
+
+
+#loginform{
+  text-align:center;
+    margin:0 auto;
+    max-width:500px;
+}
+    
+#trackSection {
+    padding-top:250px;
+    padding-right:30px;
+    padding-left:10px;
+    height: 100vh;
+}
+
+#trackSection p {
+     max-width:800px;
+    float:right;
+}
+
+#opportunitySection {
+    padding-top:250px;
+    padding-right:30px;
+    padding-left:10px;
+    height: 100vh;
+}
+
+#opportunitySection p {
+    max-width:800px;
+    float:left;
+}
+
+#rewardSection {
+      padding-top:250px;
+    padding-right:30px;
+    padding-left:10px;
+    height: 100vh;
+}
+
+.arrow {
+      padding-top:450px;
+      text-align: center; 
+}
+
+.fa {
+    font-size:50px; 
+    color: #000;
+    display: inline-block;
+    text-align: center;
+}
+
+#womanOpportunity {
+    float:right;
+}
+
+#womanTrack {
+    float:left;
+}
+
+
+/****MEDIA QUERY******/
+
+@media screen and (min-width: 740px){
+header {
+padding-right:4%;
+    background-image:url('../images/bGimage.png');
+   height: 100%;
+   background-position: center;
+    background-repeat: no-repeat; 
+
+  
+
+}
+
+    header h1{
+    
+       padding-top:15%;
+    }
+
+
 }
 
