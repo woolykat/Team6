@@ -1,0 +1,39 @@
+<html>
+  <head>
+  <script type="text/javascript">
+  function validate1() {
+  if(myform.fname.value.length==0)
+  {
+   document.getElementById("error1").innerHTML="this is invalid name ";
+   document.myform.fname.value="";
+   document.myform.fname.focus();
+  }
+  }
+      
+ function validate() {
+  if(myform.lname.value.length==0)
+  {
+   document.getElementById("error2").innerHTML="Fill in blank";
+   document.myform.lname.value="";
+   document.myform.lname.focus();
+  }
+  }      
+  </script>
+  </head>
+  <body>
+  <form name="myform">
+  First_Name
+  <input type="text" id="fname" name="fname" onblur="validate1()"> </input>
+<span style="color:blue;" id="error1" > </span>
+  <br> <br>
+  
+      
+Last_Name
+  <input type="text" id="lname" name="lname" onblur="validate()"> </input>
+  <span style="color:red;" id="error2" > </span>
+  <br>
+  <input type=button value=check> 
+
+  </form>
+  </body>
+</html>

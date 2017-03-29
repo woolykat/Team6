@@ -1,6 +1,11 @@
+@font-face {
+    font-family: "bodyFont";
+    src: url('../fonts/lato-regular.ttf') format("truetype");
+}
 
 
 body {
+   font-family:'bodyFont', sans-serif;
     font-size:20px;
     height:100%;
     width:100%;
@@ -14,9 +19,13 @@ height: 150px;
 
 }
 
+h2 {
+    font-family: 'Oswald', sans-serif; 
+}
+
 
 .main {
-   padding-top:30px;
+   padding:20px;
  margin-left:auto;
      margin-right:auto;
     max-width:1200px;
@@ -46,7 +55,7 @@ height: 50px;
 }
 /*NAVIGATION*/
 .nav{
-
+    font-family: 'Oswald', sans-serif;
     background-color:#F4CB01;
     text-decoration-color: #006680;
     font-size: 25px;
@@ -101,7 +110,7 @@ text-align: right;
 
 
 .nav ul ul{
-    width:107px;
+    width:130px;
     display: none;
     position: absolute;
     background-color: #fee76f;
