@@ -79,10 +79,10 @@ stroke-dashoffset:0
   stroke-width: 25;
   stroke-dasharray: 629;
   stroke: rgba(255, 255, 255, 0.9);
-  -webkit-animation: load 1s;
-  -moz-animation: load 1s;
-  -o-animation: load 1s;
-  animation: load 1s;
+  -webkit-animation: load 3s;
+  -moz-animation: load 3s;
+  -o-animation: load 3s;
+  animation: load 3s;
 }
     
     

@@ -1,0 +1,157 @@
+
+
+header{
+  
+    color:black;
+  
+    border: 0px;
+  
+}
+
+
+.intro p{
+padding-left: 5px;
+padding-right: 5px;
+}
+
+.login {
+    float:right;
+        top:0;
+}
+
+
+
+
+p{
+
+text-align: center;
+
+}
+
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1em;
+  background-color: #efefef;
+  text-align: center;
+}
+
+
+.logo {
+    float:left;
+}
+
+a {
+    color:#b20000;
+}
+
+form{
+    margin:0 auto;
+}
+
+table{
+margin:0 auto;
+    padding-left: 10px;
+    padding-bottom: 0px;
+}
+
+tr, td {
+    object-position: center;
+    
+}
+
+table textarea{
+    width: 70%;
+}
+
+table text{
+    width: 300px;
+}
+
+th, td {
+    
+    padding-bottom: 15px;
+    text-align: left;
+    
+}
+
+.opportunitypage {
+    margin: 0 auto;
+    max-width:600px;
+    text-align: justify;
+    font-size: 20px;
+	padding-bottom:300px;
+}
+.opportunitypage h3 {
+    text-align:center;
+    line-height:40px;
+    border-bottom:10px solid #DA1B3A;
+    color:black;
+    font-size:30px;
+}
+
+.VolunteerProfileMedals{
+    margin: 0 auto;
+    width: 75%;
+}
+
+.VolunteerProfileMedals img{
+   height:250px;
+}
+
+#error1, #error2, #error3, #error4, #error5{
+    color:red;
+    text-align:left;
+}
+/*****************css for profile page ***********************/
+.ProfileMenu{
+    background-color: #BCC6CC;
+float: right;
+    height: 100%;
+    width:20%;
+       line-height: 2em;
+}
+
+.ProfileMenu h2{
+padding-top: 10px;
+    text-decoration: underline;
+   
+}
+
+.ProfileMenu a{
+text-decoration: none; 
+    color: black;
+    font-family:sans-serif;
+}
+
+
+.ProfileMenu a:hover{
+transition: .3s;
+    color:white;
+    z-index:9999;
+}
+
+.ProfileMenu li{
+text-decoration: none;
+   list-style: none;
+    font-family: 'Oswald', sans-serif;
+    z-index:9999;
+     
+}
+#VolunteerHello{
+    padding-left:10%; 
+font-size: 50;
+float: left;
+}
+#VolunteerHello span{
+font-size:30;
+
+}
+
+#TotalHours{
+float: right;
+    padding-right:10%;
+}
