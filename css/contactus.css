@@ -1,0 +1,104 @@
+body {
+    font-size:20px;
+    height:100%;
+    width:100%;
+    padding:0;
+    margin:0;
+    background-color: #e0e0e0;;
+
+   
+}
+
+
+
+header img{
+height: 150px;
+
+}
+
+
+
+
+
+h2{
+font-size: 60px;
+    font-family: 'Oswald', sans-serif;
+   padding:  20px;
+    text-align: center;
+}
+
+
+
+
+/*******************************************
+   Style menu for larger screens
+
+   Using 650px (130px each * 5 items), but ems
+   or other values could be used depending on other factors
+********************************************/
+
+
+input[type=text], select {
+    width: 70%;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+}
+
+input[type=submit] {
+    text-align:center;
+    margin:0 auto;
+    width: 400px;
+    background-color: #4CAF50;
+    color: white;
+    font-size:16px;
+    padding: 14px 20px;
+
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+contact {
+    margin: 0 auto;
+    
+}
+
+html, body {
+    width: 100%;
+}
+table {
+    td vertical-align:top;
+    margin: 0 auto;
+    td column-span: 2;
+    text-align: center;
+}
+
+
+    
+
+
+p {
+    text-align: center;
+}
+
+
+    
+.star{
+    color:red;
+    font-size:20px;
+}
+
+ #map {height: 570px;
+     
+ 
+     margin: 0 auto;
+ }
+	
+#contact{
+    background-color: #E4E4E4;
+    margin: 0 auto;
+    width:50%;
+}
+
