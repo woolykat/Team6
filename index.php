@@ -1,174 +1,176 @@
+<?php 
+   include "php/base.php";
+   session_start();?>
 <html>
-
-<head>
-   <title>Volunteer Track Homepage</title> 
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link href="css/Hover-master/css/hover.css" rel="stylesheet" media="all">
-<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-    <meta charset="UTF-8">
-  <meta name="description" content="Home page">
-  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
-  <meta name="author" content="Volunteer Track">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-    <body>
-        
-   
+   <head>
+      <title>Volunteer Track Homepage</title>
+      <link rel="stylesheet" type="text/css" href="css/base.css">
+       <link rel="stylesheet" type="text/css" href="css/index.css">
+      <link href="css/Hover-master/css/hover.css" rel="stylesheet" media="all">
+      <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+         <link href="https://fonts.googleapis.com/css?family=Mrs+Sheppards" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <meta charset="UTF-8">
+      <meta name="description" content="Home page">
+      <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+      <meta name="author" content="Volunteer Track">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script>function validateForm() {
+         var x = document.forms["searchform"]["search"].value;
+         if (x == "") {
+            
+             return false;
+         }
+         }
+      </script>
+   </head>
+   <body>
+      <div id="container">
+         <header>
        
-    <header>
-     
-        <img src="media/volunteertrack.jpg" class="logo">
-        <br>
+            <div class="nav">
+                   <ul class="titlelist">
+               <li> <img src="media/logo.png" class="logo"><span class="logotitle">Volunteer Track</span></li>
            
-<h1>Volunteer Track</h1>
-
-        
-  <nav>  
-<ul>
-   
-  <li><a href="contactus.html">Help</a></li>
-  <li><a href="news.asp">News</a></li>
-  <li><a href="contact.asp">Profile</a></li>
-  <li><a href="">Search</a></li>
+              
+            </ul>
+                
+               <ul id="rightside">
+  <li><a class="active" href="index.php">Home</a></li>
+  
+  <li>
+<a href="#"><?php echo $_SESSION['login_volunteer']; ?></a>
+                   <ul>
+      <li><a href="V.Profile.php">Profile</a></li>
+      <li><a href="contactus.php">Contact Us</a></li>
+      <li><a href="logout.php">Logout</a></li>
+      
+      </ul>
+                   
+                   
+                   </li>
+  
 </ul>
-    
-        </nav>
-    </header>
- 
- <div id="container">
-
-   
-  <main>  
-
-<div class="intro">
-   
-   <br> <br>
-<p>Welcome to volunteer track are webiste is designed to keep you on track and moving in the right direction when it comes to volunteering. Please feel free to browse our website as well as your newly created personal page!</p>
-    
-    <h2>Search For Opportunities </h2>
-    </div>
-    <div id="search">
-                    <form action="" method="post">
-        <input type="text" name="search"/>
-        <input type="submit" name="submit" value="Search"/>
-    </form>
-        </div>
-    <dv class="searchresults">
-<?php
- if (isset($_POST['submit'])) {   
-$conn = mysqli_connect("localhost", "Team6", "te8AJUJZ")
-    or die ("couldn't connect! Error:" . mysqli_error($conn));
-
-mysqli_select_db($conn , 'Team6') or die ('Database will not open');
-
-$search=$_POST['search'];
-
-$query="SELECT * FROM opportunity WHERE keywords LIKE '%".$search."%'";
-
-$result= mysqli_query ($conn, $query)
-or die ('Invalid Query'); 
-
-
-if (mysqli_num_rows($result) > 0) {
-    while($row=mysqli_fetch_assoc($result)) {
-        
-       
-      //  echo "opportunity name: " . $row["opportunity_name"]. "<br/>";
-         ?>
-<a href="./displaypage.php?data=<?php echo $row["opportunityID"]; ?>"><div class="searchresults"><?php echo $row["opportunity_name"]; ?></a><br /><span>
-<?php echo $row["location"]; echo "</span><br/></div>";
-    }
-   
-}
- 
-
-else {
-    echo "0 results";
-}
-     
-
-mysqli_close ($conn);
-     }
-?>  
-        
-        
+            </div><!--
+         --></header><!--
+         -->
           
-        <!---START OF CAMPAGNS---->
-        
-      <hr>  
-        
-        <div class="FeaturedCampaigns">
-            
-            
-            <h2>Featured Campaigns </h2>
-           
-            <div id="LeftStyle">
-        <img src="media/waterchallenge.png" alt="waterbucketchallenge">
-             <h3>The Ice Buck Challenge!</h3>
-                 <p>When: August 2017</p>
-     <br>
-                      <a href="hhttps://www.als.net/icebucketchallenge/">
-
-                    <input type="button" class="button" value="Get Involved"></a><br>
-                 <br>
-           <br>
-                
-                
-                
-        </div><br><br>
-         <hr>
-            
-            
-            <div id="LeftStyle">
-        <img src="media/ColourRun.jpg"alt="Colour run">
-             <h3>The Colour Run!</h3>
-            <p>When: Event Time change throughout the year</p>
-                <br>
-             
-                <br>
+          
+          <div class="searchBackground">
+            <h2>Search For Opportunities </h2>
+            <div class="search">
+               <form action="" method="post" onsubmit="return validateForm()" name="searchform">
+                  <input type="text" name="search"/>
+                   
+                  <input type="submit" name="submit" value="Search"/>
+               </form>
+            </div>
+            <div class="searchresults">
+               <?php
+                  if (isset($_POST['search'])) {   
+                  
+                  $search=$_POST['search'];
+                  
+                  $query="SELECT * FROM opportunity WHERE keywords LIKE '%".$search."%'";
+                  
+                  $result= mysqli_query ($conn, $query)
+                  or die ('Invalid Query'); 
+                  
+                  
+                  if (mysqli_num_rows($result) > 0) {
+                     while($row=mysqli_fetch_assoc($result)) {
+                         
+                        
+                       //  echo "opportunity name: " . $row["opportunity_name"]. "<br/>";
+                          ?>
+               <a href="./opportunity.php?data=<?php echo $row["opportunityID"]; ?>"><?php echo $row["opportunity_name"]; ?></a><br /><span>
+               <?php echo $row["location"]; echo "</span><br/>";
+                  }
+                  
+                  }
+                  
+                  
+                  else {
+                  echo "0 results";
+                  }
+                   
+                  
+                  mysqli_close ($conn);
+                   }
+                  
+                  ?>  
+            </div>
+                </div>
+              
+            <!---START OF CAMPAGNS---->
+         
+            <div id="FeaturedCampaigns">
+              <div class="main">
                   
                 
-                <a href="http://thecolorrun.co.uk/events/">
-
-                    <input type="button" class="button" value="Get Involved"></a>
-                <br>
-                <p>Dont forget to Donate and tag a friend to complete the challenge too!</p>
-        <br><br><br><br><br>
-         <hr>
+        
+       <div id="myWork" class="animatedParent">
+              <h2>Featured Campaigns</h2>
+               <div class="centeredGallery">
+                <ul class="galleryImages">
+                   <li>
+                     <a href="https://www.als.net/icebucketchallenge/?gclid=CMzxt9mr-dICFeQy0wodofIGTQ" title="Lettering Instagram">
+                      <div class="Ice">  
+                           <img src="images/ice.jpg" alt="Ice Bucket Challenge" class="gallery"/>
+                               <div class="caption">The Ice Bucket Challenge </div>
+                      </div>
+                     </a>
+                    </li>
+                    <li>
+                     <a href="http://thecolorrun.co.uk/" title="The colour run">
+                      <div class="Colour">
+                            <img src="images/colourfeature.jpg" class="gallery"/>
+                               <div class="caption">The Colour Run</div>
+                      </div>
+                     </a>
+                    </li>
+                    <br/>
+                    <li>
+                     <a href="http://www.cancerfundforchildren.com/event/belfast-city-marathon-2017/?gclid=CJ6liMmr-dICFUVmGwodWoIHQw" title="Marathon">
+                      <div class="marathon">
+                            <img src="images/marathon.jpg" class="gallery"/>
+                                <div class="caption">The Belfast Marathon</div>
+                      </div>
+                     </a>
+                    </li>
+                    <li>
+                     <a href="http://www.cancerresearchuk.org/support-us/find-an-event/bark-for-life-2017" title="Bark for life">
+                      <div class="bark">
+                            <img src="images/dogs.jpg" class="gallery"/>
+                                 <div class="caption">Bark for Life</div>
+                      </div>
+                     </a>
+                    </li>
+                </ul>
+               </div>
+               </div>
             </div>
-            <div id="LeftStyle">
-       <img src="media/marathon.jpg"
-             alt="Marathong Image">
-             <h3>Belfast City Marathon!</h3>
+         </div>
+              
+      <!---START OF About us---->
+              <div class="main">
+              <div id="About Us">
+              
+              <h2>About Us</h2>
+              
+       
                   <br>
-                <p>When: Event Time change throughout the year</p>
-            <br>
-                
-                    
-                <a href="https://register.belfastcitymarathon.com/ps/event/DeepRiverRockBelfastCityMarathon">
-
-                    <input type="button" class="button" value="Get Involved"></a>
-                    
-     <br>
-                <p>Dont forget to Donate and tag a friend to complete the marathon with you!</p>
-        </div><br><br><br><br><br>
-         <hr>
-        </div>    
-         
-        </main>
-            
-        <footer>Copyright Volunteer Track</strong></footer>
-   
-        <script>
-// When the user clicks on <div>, open the popup
-function myFunction() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-}
-</script>
-            </main>
-      
-        </div>
-          </div>
-        </body>
+                  <h2>What is Volunteer Track?</h2>
+                  <p>Volunteer Track is a website designed to help you keep track of your hours and to keep volunteering fun! This is done by giving you your own profile to update and display! Giving you a range of volunteer opportunities within your area and also allowing you to see the most popular ones at the moment!</p>
+                  <p>Within volunteer track you can also showcase your achievements to other charities that you may be considering to volunteer for. Build up your CV with great appraisals for your future employer and even build your skills and knowledge in particular fields. </p>
+              </div>
+                  <div id="didYouKnow">
+                  <h2>Did you know?</h2>
+                  
+                  <p>19.8 million people regularly volunteer in the UK.</p>
+                  <p>There are also 190 thousand charities with the UK alone.</p>
+                  <p>80&#37; of workers say they want to volunteer.</p>
+              </div>
+                  </div>
+   </body>
 </html>

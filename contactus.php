@@ -115,30 +115,7 @@
  </td>
 </tr>
 </table>
-</form>
-    
-     <div id="map"></div>
-    <script>
-      function initMap() {
-        var uluru = {lat: 54.687254, lng: -5.882736};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 15,
-          center: uluru
-            
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZaXZapA5Ik_ePNNy47rVxv7A6IoVBZHw&callback=initMap">
-    </script>
-    
-    
-    </div>
-<?php
+    <?php
 if(isset($_POST['email'])) {
      
     
@@ -152,7 +129,7 @@ if(isset($_POST['email'])) {
         echo "We are very sorry, but there was a problem found with the form you submitted. ";
         echo "These errors appear below.<br /><br />";
         echo $error."<br /><br />";
-        echo "Hit the back button to fix these issues.<br /><br />";
+      
         die();
     }
      
@@ -213,6 +190,29 @@ $headers = 'From: '.$email_from."\r\n".
 }
 ?>
 
+</form>
+    
+     <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 54.687254, lng: -5.882736};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: uluru
+            
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZaXZapA5Ik_ePNNy47rVxv7A6IoVBZHw&callback=initMap">
+    </script>
+    
+    
+    
  
 <!-- place your own success html below -->
 

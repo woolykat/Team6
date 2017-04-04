@@ -115,30 +115,7 @@
  </td>
 </tr>
 </table>
-</form>
-    
-     <div id="map"></div>
-    <script>
-      function initMap() {
-        var uluru = {lat: 54.687254, lng: -5.882736};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 15,
-          center: uluru
-            
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZaXZapA5Ik_ePNNy47rVxv7A6IoVBZHw&callback=initMap">
-    </script>
-    
-    
-    </div>
-<?php
+    <?php
 if(isset($_POST['email'])) {
      
     
@@ -152,7 +129,7 @@ if(isset($_POST['email'])) {
         echo "We are very sorry, but there was a problem found with the form you submitted. ";
         echo "These errors appear below.<br /><br />";
         echo $error."<br /><br />";
-        echo "Hit the back button to fix these issues.<br /><br />";
+    
         die();
     }
      
@@ -174,17 +151,17 @@ if(isset($_POST['email'])) {
     $error_message = "";
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
   if(!preg_match($email_exp,$email_from)) {
-    $error_message .= 'The Email Address you entered does not appear to be valid. Make sure you included  and @ and a full stop were needed<br />';
+    $error_message .= 'The Email Address you entered does not appear to be valid. You may have forgot an @ sign<br />';
   }
     $string_exp = "/^[A-Za-z .'-]+$/";
   if(!preg_match($string_exp,$first_name)) {
-    $error_message .= 'The First Name you entered does not appear to be valid.<br />';
+    $error_message .= 'The First Name you entered does not appear to be valid.Please enter your first name<br />';
   }
   if(!preg_match($string_exp,$last_name)) {
-    $error_message .= 'The Last Name you entered does not appear to be valid.<br />';
+    $error_message .= 'The Last Name you entered does not appear to be valid.Please enter your last name<br />';
   }
   if(strlen($comments) < 2) {
-    $error_message .= 'The Comments you entered do not appear to be valid.<br />';
+    $error_message .= 'The Comments you entered do not appear to be valid.Please enter your question here<br />';
   }
   if(strlen($error_message) > 0) {
     died($error_message);
@@ -211,7 +188,32 @@ $headers = 'From: '.$email_from."\r\n".
     
     
 }
+
 ?>
+</form>
+    
+     <div id="map">
+    <script>
+      function initMap() {
+        var uluru = {lat: 54.687254, lng: -5.882736};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: uluru
+            
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZaXZapA5Ik_ePNNy47rVxv7A6IoVBZHw&callback=initMap">
+    </script>
+    
+    
+    </div>
+
 
  
 <!-- place your own success html below -->
