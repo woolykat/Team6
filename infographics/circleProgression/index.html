@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<style>
+body { background-color:#ECF0F1;}
+</style>
+</head>
+
+<body>
+
+
+<script type="text/javascript"></script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+<h1 style="margin:150px auto 130px auto; text-align:center;">jQuery circle</h1>
+<div style="width:250px;height:250px;margin:18px auto;">
+	<div class="percent" style="width:250px;height:250px;">
+		<p style="display:none;">100%</p>
+        
+	</div>
+</div>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="jQuery.circleProgressBar.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"></script>
+<script>
+$(function () {
+	$('.percent').percentageLoader({
+		valElement: 'p',
+		strokeWidth: 30,
+		bgColor: '#d9d9d9',
+		ringColor: '#d53f3f',
+		textColor: '#2C3E50',
+		fontSize: '14px',
+		fontWeight: 'normal'
+	});
+
+});
+</script>
+    
+    
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

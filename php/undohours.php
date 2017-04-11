@@ -7,6 +7,6 @@
 
 
 echo '<script type="text/javascript">
-           window.location = "https://scm.ulster.ac.uk/~Team6/mvp2/v.profile.php"
+           window.location = "../v.profile.php"
       </script>';
  ?>
