@@ -82,12 +82,8 @@ option {
     font-size:30px;
 }*/
 
-select {/*select the charity to add hours*/
-     background-color: #fff;
-    font-size:16px;
-    width:80%;
-    cursor: pointer;  
-}
+
+
 
 #show { /*Add organisation button*/
     width:80%;
@@ -103,7 +99,7 @@ select {/*select the charity to add hours*/
 }
 
 input[type=text], select {
-    width: 90%;
+    width: 100%;
     margin:10px 0;
     font-size:16px;
     color:#000;
@@ -131,11 +127,11 @@ text-align:center;
     
 }
 .VolunteerProfileMedals img{
-    width:400px;
+    width:250px;
 }
 
 div.figure {
-  width: 450px;
+  width: 280px;
   text-align: center;
   font-size: 25px;
   font-weight: 500;
@@ -145,40 +141,84 @@ div.figure {
   padding: 0.5em;
 }
 
-.summary li {
-    width:30%;
+#summarysec, #startedsec{
+   text-align:center;
+    margin:0 auto;
+    margin-top:40px;
+}
+.summary li{
+     margin:0 auto;
+    width:380px;
     display:inline-block;
+    overflow: hidden;
     background-color:#F4CB01;
-    margin:2px;
-    height:200px;
-    padding:10px;
+   
+    height:250px;
     text-align:center;
-    font-size:30px;
-    
+    font-size:20px;
     
 }
 
-.summary{
+.started li {
+      margin:0 auto;
+    display:inline-block;
+    overflow: hidden;
+    text-align:center;
+    font-size:20px; 
+}
+.startedbutton{
+    cursor: pointer;
+    background-color:#F4CB01;
+      height:250px;
+    width:380px;
+    border:0;
+       font-size:30px;
+}
+
+.summary, .started{
     width:100%;
     padding:0;
-    margin:0;
+    margin:0 auto;
+    
 }
-.summary p{
-    position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+.summary span{
+    font-size:50px;
+}
+
+
+#showcharity{
+    margin:0 auto;
+
+    width:500px;
+    
+}
+.summary img{
+    margin:0;
+    padding:0;
 }
 
 #undobutton{
-        width:50%;
+    margin:0 auto;
+        width:100%;
     background-color: #fff;
-    border-style: solid;
+    border: solid lightgrey 4px;
     font-size:16px;
     padding:10px;
     border-radius:4px;
     box-shadow:none !important;
     cursor: pointer;
-    border-color:#fff;
-    border-style: solid;
     color:black;
+}
+
+
+@media screen and (max-width:960px){
+    #ProfileMenu, #editprofile{
+    clear:both;
+    float:none;
+        margin:0 auto;
+    }
+    #main {
+        clear:both;
+        
+    }
 }

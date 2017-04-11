@@ -1,4 +1,9 @@
-<?php session_start();?>
+<?php session_start();
+if(!$_SESSION['login']){
+   header("location:home.php");
+   die;
+}
+?>
 <!doctype html>
 
 <head>
@@ -218,7 +223,9 @@
             </ul>
                 
                <ul id="rightside">
-  <li><a class="active" href="post.php">Post an opportunity</a></li>
+                
+  <li><a class="active" href="post.php">Post an Opportunity</a></li>
+                        <li><a href="applyForFeature.php">Post a Campaign</a></li>
   <li>
 <a href="#"><?php echo $_SESSION['login_charity']; ?></a>
                    <ul>

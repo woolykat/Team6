@@ -5,6 +5,7 @@ session_start();
 <html>
     <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" type="text/css" href="home.css">
      <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 
@@ -127,7 +128,7 @@ $result = mysqli_query($conn,$query);
 if(mysqli_num_rows($result)==1){
     
     $_SESSION['login_volunteer'] = $username;
-    
+    $_SESSION['login'] = true;
     
 echo '<script type="text/javascript">
            window.location = "index.php"
@@ -161,6 +162,7 @@ $result0 = mysqli_query($conn,$query0);
 if(mysqli_num_rows($result0)==1){
     
      $_SESSION['login_charity'] = $username;
+    $_SESSION['login'] = true;
 echo '<script>
            window.location = "post.php"
       </script>';

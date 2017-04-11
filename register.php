@@ -2,6 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
      <link rel="stylesheet" type="text/css" href="home.css">
       <link href="https://fonts.googleapis.com/css?family=Mrs+Sheppards" rel="stylesheet">
@@ -240,9 +241,9 @@ $(function() {
         </div>
 </article>
                 <article>
-    <div id="rightSplit">
+    <div id="rightSplitC">
         <div class="charitylog"><a href="charityregister.php">Register as a business</a></div>
-        <div class="verticalCenter">
+        <div class="verticalCenterC">
     <div class="header">
       
         
@@ -282,12 +283,8 @@ $(function() {
                         <tr><td><input type="text" id="email2" name="emailv2" value="Email must not be blank" style="display: none;" Readonly="Readonly"/></td></tr>
                     
                     
-                   
-        
                     
-                    
-                    
-        <!---PASSWORD NAME----->
+            <!---PASSWORD NAME----->
         <tr><td></p><input type="password" name="password" placeholder="Password" id="password" onchange="validatePassword();"></td></tr>
              
                       <!--password error blank-->
@@ -310,10 +307,22 @@ $fullname = $_POST['fullname'];
 $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
+$username= addslashes($username);
+$password= addslashes($password);
 
 
-    
+$checkUsername="SELECT username FROM users WHERE username= '".$username."'";
+    $checkresult=mysqli_query($conn,$checkUsername);
+     if(mysqli_num_rows($checkresult)>0){
+         echo "<p style='color:red;'>Username already exists. Please choose another username.</p>";
+         
+     }
+     
+   
 
+     
+     else {
+        
   
 $register="INSERT INTO users(username, email, password, name) VALUES('$username', '$email', '$password', '$fullname')";
         mysqli_query($conn, $register) or die ("<br>Invalid Query");
@@ -324,7 +333,7 @@ $register="INSERT INTO users(username, email, password, name) VALUES('$username'
      
  mysqli_close($conn);
      }
- 
+ }
 
 
 ?>

@@ -55,18 +55,6 @@ input[type=submit]:hover {
 }
   
 
-.button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
- 
-    cursor: pointer;
-}
 
 #submitbutton{
     margin: 0 auto;
@@ -86,7 +74,7 @@ font-family: 'Oswald', sans-serif;
 #FeaturedCampaigns{
 background-color: #e0e0e0;
  display: block;
-height:900px;
+min-height:900px;
 }
 #myWork {
     margin: 0 auto;
@@ -168,4 +156,35 @@ text-align: center;
 
 }
 
+/*******RESPONSIVE MEDIA QUERY************/
+
+
+@media screen and (max-width:960px){
+
+.searchBackground{
+    height:500px;
+
+}
+    .gallery {
+    width: 200px;
+    height:146px;
+}
+    .searchresults{
+    font-size:15;
+    }
+.searchresults span {
+font-size:10;
+
+}
+    p{
+    font-size: 15;
+        padding:5px;
+        line-height: 1.2em;
+    }
+    #didYouKnow p {
+        font-size: 15;
+text-align: center;
+
+}
+}
 

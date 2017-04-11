@@ -1,4 +1,9 @@
-<?php session_start();?>
+<?php session_start();
+if(!$_SESSION['login']){
+   header("location:home.php");
+   die;
+}
+?>
 <html>
 
 
@@ -22,13 +27,13 @@
             </ul>
                 
                <ul id="rightside">
-  <li><a class="active" href="post.php">Post an opportunity</a></li>
-  
+  <li><a  href="post.php">Post an opportunity</a></li>
+  <li><a href="applyForFeature.php">Post a Campaign</a></li>
   <li>
 <a href="#"><?php echo $_SESSION['login_charity']; ?></a>
                    <ul>
       
-      <li><a href="contactus2.php">Contact Us</a></li>
+      <li><a class="active" href="contactus2.php">Contact Us</a></li>
       <li><a href="logout.php">Logout</a></li>
       
       </ul>

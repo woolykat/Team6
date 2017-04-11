@@ -1,3 +1,11 @@
+body {
+    width:100%;
+    padding:0;
+    margin:0;
+    
+}
+
+
 h2 {
     padding-bottom: 100px;
     text-align: center;
@@ -7,7 +15,7 @@ h2 {
 
 table{
     margin:0 auto;
-    padding-left: 10%;
+  
     padding-bottom: 0px;
 }
 
@@ -21,8 +29,7 @@ tr, td {
 }
 
 table textarea, text{
-    width: 400px;
-    padding: 22px 20px;
+    max-width: 400px;
     margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 2px;
@@ -31,8 +38,10 @@ table textarea, text{
 
 table{
     margin:0 auto;
-    padding-left: 10%;   
+    padding:10px;
+   
 }
+
 
 th, td {
     padding-bottom: 25px;
@@ -61,12 +70,12 @@ input[type=submit]:hover {
 }
 
 input[type=text] {
-    width:90%;   
+    max-width:90%;  
 }
 
 input, textarea {
     font-size: 14px;   
-    width:400px;
+    max-width:400px;
 }
 
 .star {
@@ -94,12 +103,39 @@ margin-left:15px;
     line-height:10px;
 }
 
- #titlenv {
-    border:0px;
-    color:red;
-    font-weight: 600;
-    width:220px;
-    padding:0px;
-    height:50px;
-    line-height:10px;
- }
+
+/*******RESPONSIVE MEDIA QUERY************/
+
+
+@media screen and (max-width:960px){
+
+    .postForm ,h2{
+    font-size:1.5em;
+    }
+    
+    table{
+    padding:0;
+    }
+ 
+.postForm, th{
+  font-size:1em;
+    display: block;
+
+}
+  input[type=text] {
+      display: block;
+    width:75%;   
+}
+
+    table textarea, text{
+    width: 200px;
+        padding:0;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+    
+}
+
+

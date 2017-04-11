@@ -4,17 +4,11 @@ body {
     width:100%;
     padding:0;
     margin:0;
-    background-color: #e0e0e0;;
+
 
    
 }
 
-
-
-header img{
-height: 150px;
-
-}
 
 
 
@@ -23,7 +17,7 @@ height: 150px;
 h2{
 font-size: 60px;
     font-family: 'Oswald', sans-serif;
-   padding:  20px;
+   padding:  0px;
     text-align: center;
 }
 
@@ -64,6 +58,10 @@ contact {
     margin: 0 auto;
     
 }
+#contactT{
+margin-bottom: 20px;
+
+}
 
 html, body {
     width: 100%;
@@ -94,11 +92,64 @@ p {
      
  
      margin: 0 auto;
+     margin-top:20px;
  }
 	
 #contact{
-    background-color: #E4E4E4;
+   
     margin: 0 auto;
     width:50%;
 }
+
+/****MEDIA QUERY******/
+
+@media only screen and (max-width: 960px) {
+
+h2{
+    font-size:1.5em;
+    margin:0 auto;
+    }
+    
+      #text{
+          font-size: 1em;
+padding-left:15px;
+padding-right:15px;
+      }
+
+    
+#map {
+  margin-top:40;
+   width:100%;   
+    }
+
+table {
+    width:100%;
+    float: left;
+}
+ 
+  input[type=text], select {
+   
+    width: 60%;
+    
+
+
+}
+
+input[type=submit] {
+    text-align:center;
+  
+    
+    width: 30%;
+    background-color: #4CAF50;
+    color: white;
+    font-size:16px;
+   
+
+    
+}
+ 
+
+    
+}
+
 
