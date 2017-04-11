@@ -34,6 +34,10 @@ h2 {
 
 
 /*  Title styling */
+
+.nav #rightside  .icon{
+display:none;
+}
 .logotitle{
     margin-left:15px;
 font-size: 50;
@@ -94,7 +98,6 @@ text-align: right;
 }
 
 .nav ul li a:visited{
-    color: #fff;
     display: block;
     text-decoration: none;
 }
@@ -130,6 +133,11 @@ text-align: right;
     
 }
 
+a:active{
+    color:white;
+    
+    
+}
 
 
 
@@ -219,8 +227,12 @@ input[type=submit] {
 }
 
 
+@media screen and (max-width:960px){
 
+input[type=submit] {
+background-color: #4CAF50;
+    width: 200px; 
 
+}
 
-
-
+}
