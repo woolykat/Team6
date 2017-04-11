@@ -1,10 +1,17 @@
-<?php session_start(); include"php/base.php"?>
+<?php session_start(); 
+include"php/base.php";
+if(!$_SESSION['login']){
+   header("location:home.php");
+   die;
+}
+?>
 <html>
 
 <head>
    <title>Volunteer Profile</title> 
     <link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/v.profile.css">
+    <link rel="stylesheet" type="text/css" href="css/chosen-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/extra.css">
     <link rel="stylesheet" type="text/css" href="css/circleanimation.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -25,14 +32,29 @@ $(document).ready(function(){
     $("#show").click(function(){
         $(".hidden").show();
     });
+    
+      $("#showadd").click(function(){
+        $("#startedsec").hide();
+          $("#showcharity").show();
+    });
+    
+    
 });
     
 </script>
-
+<script>
+function printpage() {
+    window.print();
+}
+</script>
+    
 </head>
+    
     <body>
         
    
+
+
        
     <header>
       <div class="nav">
@@ -65,13 +87,19 @@ $(document).ready(function(){
 
 <div id="profile">
        <div class="main">
+<?php $regular = "SELECT * FROM recordhours WHERE volunteerID= ".$_SESSION['volunteer_ID']."";
 
+$resultregular = mysqli_query($conn,$regular);
+
+if(mysqli_num_rows($resultregular)>0){
+
+?>
           
-        
+        <div id="summarysec">
      <ul class="summary">
            
-           <li><p><?php echo $_SESSION['login_volunteer']; ?></p></li>
-         <li><p>Total Volunteer Hours
+           <li><p><img src='media/profile.png' height='70px'/><br><br><span><?php echo $_SESSION['login_volunteer']; ?></span><br><br></p></li>
+         <li><p><img src='media/star.png' height='70px'/><br>
  
          <?php
 
@@ -86,7 +114,7 @@ if (mysqli_num_rows($result) > 0) {
     while($row=mysqli_fetch_assoc($result)) {
             
        ?>
-         <?php $totalhours=$row["sum(hours)"]; echo $row["sum(hours)"]; ?></p></li>
+         <?php $totalhours=$row["sum(hours)"]; echo "<br><span>".$row["sum(hours)"]; echo "</span><br>Total Volunteer Hours"; ?></p></li>
  
          <?php
          
@@ -106,7 +134,7 @@ if (mysqli_num_rows($resultorg) > 0) {
     while($roworg=mysqli_fetch_assoc($resultorg)) {
         
           
-     echo "<li><p>Helped at " . $roworg["count(recordHoursID)"]. " organisations</p></li>";
+     echo "<li><p><img src='media/helpinghand.png' height='70px'/><br>Helped at<br><span>" . $roworg["count(recordHoursID)"]. "</span><br>charitable organisations</p></li>";
          
          
          
@@ -120,6 +148,7 @@ if (mysqli_num_rows($resultorg) > 0) {
          
          
            </ul>
+            </div>
            <div id="editprofile">
            <button class="register" onclick="window.location.href='editprofile.php'">Edit Profile</button></div>
            <div id="ProfileMenu">
@@ -129,7 +158,7 @@ if (mysqli_num_rows($resultorg) > 0) {
       
       
           <form action="" method="post">
-          <select id="optionHours" name="charitychosen">
+          <select id="optionHours" name="charitychosen" class="form-control charity-select">
                <option value="" disabled selected>Select the charity to add hours</option>
           <?php
 $query1= "SELECT charity_name, recordhours.charityID FROM recordhours, charity_user WHERE charity_user.charityID = recordhours.charityID AND volunteerID=".$_SESSION['volunteer_ID']."";
@@ -205,8 +234,9 @@ mysqli_query($conn ,$updatequery) or die('Sorry! An internal error occurred: Inv
     <br>
          <h3>Add an organisation</h3>
         <form action="php/addcharity.php" method="post">
-          <select name="addcharity">
-               <option value="" disabled selected>Select the charity</option>
+          <select name="addcharity" class="form-control charity-select" >
+        <option value="" disabled selected>Select the charity to add...</option>
+               
           <?php
 $query4= "SELECT charity_name, charityID FROM charity_user";
 $result4= mysqli_query ($conn, $query4) or die ("Invalid query");
@@ -308,8 +338,7 @@ while ($row3 = mysqli_fetch_array($result3))
 </svg>
          
          <?php } }?>
-         <hr>
-         <h3>Previous</h3><br>
+         
              <?php
  
 
@@ -323,6 +352,8 @@ while ($row2 = mysqli_fetch_array($result2))
     $current=$row2['currently'];
    if ($current==0){
     ?>
+           <hr>
+         <h3>Previous</h3><br>
                <ul class="progress">
   <!--  Item  CSS skill-->
 <li data-name="<?php echo $row2['charity_name'];?>" data-percent="<?php echo $row2['hours']; ?>"> 
@@ -380,7 +411,7 @@ while ($row2 = mysqli_fetch_array($result2))
   
   <hr>
       
-      <h2>Your rewards</h2>
+      <h2>Rewards</h2>
       <div class="VolunteerProfileMedals">
       <?php  
 
@@ -403,11 +434,68 @@ if ($totalhours > 10){
           <?php
               
           }
+    
 
 ?>
           </ul>
       </div>
-   
+           <button onclick="printpage()">Print this page</button>
+   <?php }
+          else{
+              ?>
+           
+           
+           
+           <div id="startedsec">
+               <h2>Get Started</h2>
+           <ul class="started">
+           
+           <li><button class="startedbutton" onclick="window.location.href='index.php'"><p><img src='media/search.png' height='70px'/><br><br>Search for Volunteering Opportunities<br><br></p></p></button></li>
+               
+           <li><button class="startedbutton" id="showadd"><p><img src='media/addcharity.png' height='70px'/><br><br>Add a Charity and Start Tracking!<br><br></p></li>
+            
+                   <li><button class="startedbutton" onclick="window.location.href='editprofile.php'"><p><img src='media/profile.png' height='70px'/><br><br>Edit Your Profile<br><br></p></p></button></li>
+         
+           
+           
+           
+           
+           </div>
+           
+           <div id="showcharity" style="display:none">
+               <h2>Add an Organisation to your Profile</h2>
+               <p>Start tracking your hours by adding an organisation you are volunteering for to your profile</p>
+               <form action="php/addcharity.php" method="post">
+          <select name="addcharity" class="form-control charity-select" >
+        <option value="" disabled selected>Select the charity to add...</option>
+               
+          <?php
+$query4= "SELECT charity_name, charityID FROM charity_user";
+$result4= mysqli_query ($conn, $query4) or die ("Invalid query");
+$num4 = mysqli_num_rows($result4);
+$col4 = mysqli_num_fields($result4);
+
+while ($row4 = mysqli_fetch_array($result4))
+{
+          
+          
+          ?>
+          <option name="addcharity" value="<?php echo $row4['charityID'];?>"> <?php echo $row4['charity_name'];?></option>
+              
+              <?php } ?>
+              
+              </select>
+         <input type="text" name="defaultHours" placeholder="Enter hours already volunteered with this charity"/>
+              <input type="submit" name="Add" value="Add" alt="Add"/>
+          </form> 
+               
+               </div>
+           
+           <?php
+              
+          }
+           
+           ?>
         <script>
 // When the user clicks on <div>, open the popup
 function myFunction() {
@@ -419,5 +507,12 @@ function myFunction() {
     
     </div>
           </div>
+        <script type="text/javascript" src="jquery/chosen.jquery.min.js"></script>
+        <script>
+$(function(){
+    $(".charity-select").chosen();
+});
+
+</script>
         </body>
 </html>

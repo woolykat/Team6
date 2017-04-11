@@ -1,4 +1,9 @@
-<?php session_start();?>
+<?php session_start();
+if(!$_SESSION['login']){
+   header("location:home.php");
+   die;
+}
+?>
 <html>
 
 <head>
@@ -86,21 +91,36 @@ else {
 }
      
 
-    
-  
-
-mysqli_close ($conn);
+                     
      
 ?>   
+  
+
+   
           
-                <div> 
-                    
-                    <button id="buttoncontact"type="button" onclick="#" value="Contact">Contact</button>
-            </div>
+              
+                    <?php
+        
+
+$query3 ="SELECT * from charity_user, opportunity where opportunity.charityID = charity_user.charityID AND opportunityID = '$data'";
+
+$result3= mysqli_query ($conn, $query3)
+or die ('Invalid Query'); 
+
+
+if (mysqli_num_rows($result3) > 0) {
+    while($row3=mysqli_fetch_assoc($result3)) {
+
+
+         ?>
+            <a href="mailto:<?php echo $row3["email"];  ?>">
+                    <button id="buttoncontact"type="button" value="Email Us">Contact</button>
+            
+</a>
 
      </div>  
             
-       
+       <?php }} mysqli_close ($conn); ?>
          
         </main>
         

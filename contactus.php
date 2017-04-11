@@ -1,8 +1,14 @@
-<?php session_start();?>
+<?php session_start();
+if(!$_SESSION['login']){
+   header("location:home.php");
+   die;
+}
+?>
 <html>
 
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
      <link href="https://fonts.googleapis.com/css?family=Mrs+Sheppards" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/base.css">
@@ -14,31 +20,24 @@
 
     <header>
        
-            <div class="nav">
-                   <ul class="titlelist">
+                    <div class="nav" id="MyNav">
+            <ul class="titlelist">
                <li> <img src="media/logo.png" class="logo"><span class="logotitle">Volunteer Track</span></li>
-           
-              
             </ul>
-                
-               <ul id="rightside">
-  <li><a class="active" href="index.php">Home</a></li>
-  
-  <li>
-<a href="#"><?php echo $_SESSION['login_volunteer']; ?></a>
-                   <ul>
-      <li><a href="V.Profile.php">Profile</a></li>
-      <li><a href="contactus.php">Contact Us</a></li>
-      <li><a href="logout.php">Logout</a></li>
-      
-      </ul>
-                   
-                   
-                   </li>
-  
-</ul>
-            </div>
-    
+            <ul id="rightside">
+               <li><a class="active" href="index.php">Home</a></li>
+               <li>
+                  <a href="V.Profile.php"><?php echo $_SESSION['login_volunteer']; ?></a>
+                  <ul>
+                     <li><a href="V.Profile.php">Profile</a></li>
+                     <li><a href="contactus.php">Contact Us</a></li>
+                     <li><a href="logout.php">Logout</a></li>
+                     </u       
+                     </li>
+                  </ul>
+                  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+            </ul>
+         </div>
     </header>
     
     
@@ -49,20 +48,22 @@
     
  
         
-    
+    <div id="text">
     <h2>Any Questions or queries</h2>
     <p>If you would like to find out more on volunteer track or if you have any questions for us feel free to contact us with the form below.</p>
+    </div>
     
     
-    
-    
+    <div id="contactT">
     <table>
 <form name="Contact form" method="post" action="">
     
 </tr>
 <tr>
  <td>
+     <div id="label">
   <label for="first_name">First Name <span class="star">*</label>
+      </div>
  </td>
     
  <td>
@@ -73,7 +74,9 @@
  
 <tr>
  <td>
+     <div id="label">
   <label for="last_name">Last Name <span class="star">*</label>
+         </div>
  </td>
     
  <td>
@@ -82,7 +85,9 @@
 </tr>
         
 <tr>
- <td>  <label for="email">Email Address <span class="star">*</span></label>
+ <td>  <div id="label">
+     <label for="email">Email Address <span class="star">*</span></label>
+     </div>
  </td>
  <td>
   <input  type="text" name="email" maxlength="80" size="30"><br><br>
@@ -90,8 +95,9 @@
  
 </tr>
 <tr>
-<td>
+<td> <div id="label">
   <label for="telephone">Telephone Number<span class="star">*</label>
+    </div>
  </td>
  <td>
   <input  type="text" name="telephone" maxlength="30" size="30"><br><br>
@@ -99,13 +105,15 @@
     
 </tr>
 <tr>
- <td>
+ <td> <div id="label">
   <label for="comments">Comments <span class="star">*</label>
+     </div>
  </td>
     
  <td>
-     
+     <div id="comments">
   <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea><br><br>
+         </div>
  </td>
  
 </tr>
@@ -115,6 +123,7 @@
  </td>
 </tr>
 </table>
+    </div>
     <?php
 if(isset($_POST['email'])) {
      
