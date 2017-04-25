@@ -1,0 +1,66 @@
+.settingsmenu {
+   margin:0 auto;
+    width:100%;
+    text-align:center;
+    
+}
+.settingsmenu li {
+    float:left;
+list-style-type:none;
+width:300px;
+margin:0 auto;
+
+
+}
+h3{
+text-align: center;
+}
+
+.changes form{
+margin-left:25%;
+}
+.settingsmenu button {
+width:100%;
+    background-color:white;
+border:5px solid lightgrey;  
+    cursor:pointer;
+    
+}
+#selected1{
+    background-color:lightgrey;
+    
+}
+
+#selected3{
+    color:white;
+    background-color:#cc2424;
+    
+}
+.changes {
+    border:5px lightgrey solid;
+    height:600px;
+    margin-top:30px;
+    width:100%;
+    clear:both;
+}
+
+.userprofile{
+    
+    border:5px lightgrey solid;
+    height:600px;
+    margin-top:30px;
+    width:100%;
+    clear:both;
+
+}
+
+.userprofile table{
+  margin-left:25%;  
+}
+
+#deletered{
+    background-color:#cc2424;
+}
+input[type=submit] {
+margin-left:
+}

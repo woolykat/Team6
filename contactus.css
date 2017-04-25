@@ -1,0 +1,155 @@
+body {
+    font-size:20px;
+    height:100%;
+    width:100%;
+    padding:0;
+    margin:0;
+
+
+   
+}
+
+
+
+
+
+
+h2{
+font-size: 60px;
+    font-family: 'Oswald', sans-serif;
+   padding:  0px;
+    text-align: center;
+}
+
+
+
+
+/*******************************************
+   Style menu for larger screens
+
+   Using 650px (130px each * 5 items), but ems
+   or other values could be used depending on other factors
+********************************************/
+
+
+input[type=text], select {
+    width: 70%;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+}
+
+input[type=submit] {
+    text-align:center;
+    margin:0 auto;
+    width: 400px;
+    background-color: #4CAF50;
+    color: white;
+    font-size:16px;
+    padding: 14px 20px;
+
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+contact {
+    margin: 0 auto;
+    
+}
+#contactT{
+margin-bottom: 20px;
+
+}
+
+html, body {
+    width: 100%;
+}
+table {
+    td vertical-align:top;
+    margin: 0 auto;
+    td column-span: 2;
+    text-align: center;
+}
+
+
+    
+
+
+p {
+    text-align: center;
+}
+
+
+    
+.star{
+    color:red;
+    font-size:20px;
+}
+
+ #map {height: 570px;
+     
+ 
+     margin: 0 auto;
+     margin-top:20px;
+ }
+	
+#contact{
+   
+    margin: 0 auto;
+    width:50%;
+}
+
+/****MEDIA QUERY******/
+
+@media only screen and (max-width: 960px) {
+
+h2{
+    font-size:1.5em;
+    margin:0 auto;
+    }
+    
+      #text{
+          font-size: 1em;
+padding-left:15px;
+padding-right:15px;
+      }
+
+    
+#map {
+  margin-top:40;
+   width:100%;   
+    }
+
+table {
+    width:100%;
+    float: left;
+}
+ 
+  input[type=text], select {
+   
+    width: 60%;
+    
+
+
+}
+
+input[type=submit] {
+    text-align:center;
+  
+    
+    width: 30%;
+    background-color: #4CAF50;
+    color: white;
+    font-size:16px;
+   
+
+    
+}
+ 
+
+    
+}
+
+

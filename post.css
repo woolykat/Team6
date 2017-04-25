@@ -1,0 +1,141 @@
+body {
+    width:100%;
+    padding:0;
+    margin:0;
+    
+}
+
+
+h2 {
+    padding-bottom: 100px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;   
+    font-size:50px;
+}
+
+table{
+    margin:0 auto;
+  
+    padding-bottom: 0px;
+}
+
+th {
+   font-size: 25px;
+    font-family: sans-serif;
+}
+
+tr, td {
+    object-position: center;
+}
+
+table textarea, text{
+    max-width: 400px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+table{
+    margin:0 auto;
+    padding:10px;
+   
+}
+
+
+th, td {
+    padding-bottom: 25px;
+    text-align: left;
+}
+
+span {
+  font-size: 14px;  
+  font-weight:400;
+  color: #bfbfbf;
+}
+
+.postForm {
+    padding-top: 60px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+input[type=submit] {
+    margin-top: 50px;
+    margin-bottom:100px;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049; 
+}
+
+input[type=text] {
+    max-width:90%;  
+}
+
+input, textarea {
+    font-size: 14px;   
+    max-width:400px;
+}
+
+.star {
+  color: red;
+  font-size: 20px; 
+}
+
+.logofont{
+margin-left:15px;
+    font-family: 'Mrs Sheppards', cursive;
+    font-size: 50px;
+    color: black;
+
+}
+
+/* Error Styling for Validation on post opportunity form*/
+
+#titlev, #titlelv, #descriptionv, #addressv, #addressv2, #keywordsv, #keywordsv2   {
+    border:0px;
+    color:red;
+    font-weight: 600;
+    width:300px;
+    padding:0px;
+    height:50px;
+    line-height:10px;
+}
+
+
+/*******RESPONSIVE MEDIA QUERY************/
+
+
+@media screen and (max-width:960px){
+
+    .postForm ,h2{
+    font-size:1.5em;
+    }
+    
+    table{
+    padding:0;
+    }
+ 
+.postForm, th{
+  font-size:1em;
+    display: block;
+
+}
+  input[type=text] {
+      display: block;
+    width:75%;   
+}
+
+    table textarea, text{
+    width: 200px;
+        padding:0;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+    
+}
+
+
