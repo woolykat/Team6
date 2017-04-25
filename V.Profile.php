@@ -97,12 +97,19 @@ if(mysqli_num_rows($resultregular)>0){
           
         <div id="summarysec">
      <ul class="summary">
-           
-           <li><p><img src='media/profile.png' height='70px'/><br><br><span><?php echo $_SESSION['login_volunteer']; ?></span><br><br></p></li>
+            
+		  <?php 
+		   $profileimg = "SELECT profile_image FROM users WHERE volunteerID=".$_SESSION['volunteer_ID']."";
+                        $prf = $conn->query($profileimg);
+		 if (mysqli_num_rows($prf) > 0) {
+    while($prof=mysqli_fetch_assoc($prf)) {
+		  
+		  ?>
+           <li><p><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $prof['profile_image'] ).'"class="profilepic" style="border-radius:50%;width:100px;"/>'; ?><br><br><span><?php echo $_SESSION['login_volunteer']; ?></span><br><br></p></li>
          <li><p><img src='media/star.png' height='70px'/><br>
  
          <?php
-
+	}}
          
 $query="SELECT sum(hours) FROM recordhours WHERE volunteerID= ".$_SESSION['volunteer_ID']."";
 
@@ -279,7 +286,7 @@ while ($row4 = mysqli_fetch_array($result4))
            <?php
  
 
-$query3= "SELECT * FROM recordhours, charity_user WHERE charity_user.charityID = recordhours.charityID AND volunteerID=".$_SESSION['volunteer_ID']."";
+$query3= "SELECT charity_name, hours, currently FROM recordhours, charity_user WHERE charity_user.charityID = recordhours.charityID AND volunteerID=".$_SESSION['volunteer_ID']."";
 $result3= mysqli_query ($conn, $query3) or die ("Invalid query");
 $num3 = mysqli_num_rows($result3);
 $col3 = mysqli_num_fields($result3);
@@ -340,20 +347,26 @@ while ($row3 = mysqli_fetch_array($result3))
          <?php } }?>
          
              <?php
- 
-
-$query2= "SELECT * FROM recordhours, charity_user WHERE charity_user.charityID = recordhours.charityID AND volunteerID=".$_SESSION['volunteer_ID']."";
+ $query6= "SELECT charity_name, hours, currently FROM recordhours, charity_user WHERE charity_user.charityID = recordhours.charityID AND volunteerID=".$_SESSION['volunteer_ID']."";
+$result6= mysqli_query ($conn, $query6) or die ("Invalid query");
+$row6 = mysqli_fetch_array($result6);
+$query2= "SELECT charity_name, hours, currently FROM recordhours, charity_user WHERE charity_user.charityID = recordhours.charityID AND volunteerID=".$_SESSION['volunteer_ID']." AND currently=0";
 $result2= mysqli_query ($conn, $query2) or die ("Invalid query");
 $num2 = mysqli_num_rows($result2);
 $col = mysqli_num_fields($result2);
 
-while ($row2 = mysqli_fetch_array($result2))
-{
-    $current=$row2['currently'];
+
+    $current=$row6['currently'];
+if(mysqli_num_rows($result2)>1){
+	?>
+		    <hr>
+         <h3>Previous</h3><br>  
+		   <?php
    if ($current==0){
+	   while ($row2 = mysqli_fetch_array($result2))
+{
     ?>
-           <hr>
-         <h3>Previous</h3><br>
+        
                <ul class="progress">
   <!--  Item  CSS skill-->
 <li data-name="<?php echo $row2['charity_name'];?>" data-percent="<?php echo $row2['hours']; ?>"> 
@@ -402,7 +415,7 @@ while ($row2 = mysqli_fetch_array($result2))
 </defs>
 </svg>
          
-         <?php } }?>         
+         <?php } } }?>         
  
          
   
@@ -415,26 +428,65 @@ while ($row2 = mysqli_fetch_array($result2))
       <div class="VolunteerProfileMedals">
       <?php  
 
-if ($totalhours > 10){
+if ($totalhours >= 10){
     
 ?>
       <ul>
          <li> <div class=figure><img src="img/medal(bronze).png"><p>10 hours achieved!</p></div></li>
-          <?php } 
-          if ($totalhours > 25){
+          <?php 
+
+}
+if ($totalhours <10 ){
+?>
+      <ul>
+         <li> <div class=figure><img src="media/unknown.png"><span><p>Complete 10 hours</p></span></div></li>
+          <?php 
+
+} 
+          if ($totalhours >= 25){
           
           ?>
        
           <li> <div class=figure><img src="img/medal(silver).png"><p>25 hours achieved!</p></div></li>
           
           <?php } 
-          if ($totalhours > 50){
+    if ($totalhours <25  ){
+?>
+     
+         <li> <div class=figure><img src="media/unknown.png"><p class="silver">Complete 25 hours</p></div></li>
+          <?php 
+
+}                                   
+                                      
+                                      
+                                      
+                                      
+          if ($totalhours >= 50){
           ?>
           <li> <div class=figure><img src="img/medal(Gold).png"><p>50 hours achieved!</p></div></li>
           <?php
               
           }
-    
+	
+	if ($totalhours >= 100){
+          ?>
+          <li> <div class=figure><img src="media/platnium.png"><p>100 hours achieved!</p></div></li>
+          <?php
+              
+          }
+                                      
+                                          if ($totalhours < 50){
+          ?>
+          <li> <div class=figure><img src="media/unknown.png"><p>Complete 50 hours</p></div></li>
+          <?php
+              
+          }
+                  if ($totalhours < 100){
+          ?>
+          <li> <div class=figure><img src="media/platniumunknown.png"><p>Complete 100 hours</p></div></li>
+          <?php
+              
+          }
 
 ?>
           </ul>

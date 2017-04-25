@@ -27,13 +27,29 @@ if(!$_SESSION['login']){
     
     <script>
 $(document).ready(function(){
-    $("#show").click(function(){
-        $(".hidden").show();
-    });
-});
+$("#selected2").click(function(){
+$(".changes").hide();
+    $(".userprofile").show();
+}
+}
+
+            
+
     
 </script>
-
+    
+<script>
+function deletefunction() {
+    var txt;
+    var r = confirm("Are you sure you want to delete your account?!");
+    if (r == true) {
+        txt = "Your account has been deleted, we are sorry to see you go!";
+    } else {
+        txt = "";
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>
 </head>
     <body>
         
@@ -72,10 +88,10 @@ $(document).ready(function(){
        <div class="main">
            <h2>Settings</h2>
 <ul class="settingsmenu">
-           
+           <p id="demo"></p>
     <li><button id="selected1">Volunteering</button></li>
     <li><button id="selected2">Personal Information</button></li>
-    <li><button id="selected3">Delete Account</button></li>
+    <li><button id="selected3" onclick="deletefunction()">Delete Account</button></li>
            
            
 </ul>
@@ -135,6 +151,82 @@ mysqli_query($conn ,$deletequery) or die('Sorry! An internal error occurred: Inv
 
 ?>
     </div>
+		   
+		   
+		<div class="userprofile" style="display:none">
+			
+			<?php 
+
+include"php/base.php";
+$query= "SELECT username, name FROM users WHERE volunteerid=".$_SESSION['volunteer_ID']."";
+$result= mysqli_query ($conn, $query) or die ("Invalid query");
+$num = mysqli_num_rows($result);
+
+while ($row = mysqli_fetch_array($result))
+{
+    ?> 
+
+
+			
+			
+			
+			<form method="post" name="myForm" enctype="multipart/form-data" onsubmit="">
+				<table>
+	
+	
+	<tr><th>Username:</th> <td><input type="text" value="<?php echo $row['username'] ?>" name="username"></td></tr>
+<tr><th>Full Name: <td><input type="text" name="fullname" value="<?php echo $row['name'] ?>"></td></tr>
+
+
+<?php
+} ?>
+		<tr><th>Profile Image:</th> <td><input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+<input name="userfile" type="file" id="userfile"></td></tr></table>
+					<br><input type="submit" value="update" name="update"/>
+			</form>
+		   <?php
+if (isset($_POST['update'])) { 
+
+$fullname=$_POST["fullname"];
+$username=$_POST["username"];
+ if (empty($_POST["userfile"])) {
+	$sql = "UPDATE users SET Name='$fullname', username= '$username' WHERE volunteerID=".$_SESSION['volunteer_ID']."";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . $conn->error;
+} 
+ }
+else {
+$imagename=$_FILES["userfile"]["name"];
+
+//Get the content of the image and then add slashes to it 
+$imagetmp=addslashes (file_get_contents($_FILES['userfile']['tmp_name']));
+
+ 
+ 
+
+$sql = "UPDATE users SET Name='$fullname', profile_image ='$imagetmp', username= '$username' WHERE volunteerID=".$_SESSION['volunteer_ID']."";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . $conn->error;
+}
+	
+}
+
+$conn->close();
+	
+}
+
+?>
+		   
+		   
+		   
+		   
+		   </div>
           </div>
         </body>
 </html>

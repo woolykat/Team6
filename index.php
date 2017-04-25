@@ -42,6 +42,8 @@
    <body>
       <div id="container">
       <header>
+		  
+		 
          <div class="nav" id="MyNav">
             <ul class="titlelist">
                <li> <img src="media/logo.png" class="logo"><span class="logotitle">Volunteer Track</span></li>
@@ -69,7 +71,7 @@
          <h2>Search For Opportunities </h2>
          <div class="search">
             <form action="" method="post" onsubmit="return validateForm()" name="searchform">
-               <input type="text" name="search" placeholder="Enter a location, town, or keyword e.g. animals"/>
+               <input type="text" name="search" placeholder="Enter a location, town, or keyword e.g. animals"/><br>
                <input type="submit" name="submit" value="Search"/>
             </form>
          </div>
@@ -117,7 +119,7 @@
                <div class="centeredGallery">
                   <ul class="galleryImages">
                      <?php
-                        include "php/base.php";
+                        
                         $todaysdate=date("Ymd");
                         $sql = "SELECT featured_image,featured_name,website FROM featuredcamps WHERE start_date<= ".$todaysdate." AND expiry_date>".$todaysdate."";
                         $sth = $conn->query($sql);
