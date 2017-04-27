@@ -24,15 +24,7 @@ $(function() {
   });
 });
 </script>
-<script>
-  $(document).ready(function(){
-    $("#hide").click(function(){
-        $(".back2home").hide();
-    });
-});
-    
-    
-    </script>
+
     
     <script>
          //UserName validation
@@ -193,6 +185,13 @@ $(function() {
                  {
                      return false;
                  }
+
+            
+
+            
+      
+    
+
 }
     
         
@@ -243,14 +242,15 @@ $(function() {
                 <article>
     <div id="rightSplitC">
         <div class="charitylog"><a href="charityregister.php">Register as a business</a></div>
-        <div class="verticalCenterC">
-    <div class="header">
+        <div class="verticalCenter">
+  
       
         
         
         
         
 <div id="loginform">
+    <div id="hideform">
      <table><tr><td><img src="media/logo.png" width="100px"/></td></tr>
          <tr><td><h3>Create an account</h3></td></tr>
                 <form method="post" action="" name="registerForm"  onsubmit="return validateForm();">
@@ -298,6 +298,7 @@ $(function() {
         <tr><td> <input type="submit" name="submit" value="Register" id="hide"></td></tr>
      </table>
             </form>
+              <div class="back2home"><a href="home.php">Already have an account? Log In</a></div></div>
        
             
 <?php
@@ -328,7 +329,7 @@ $register="INSERT INTO users(username, email, password, name) VALUES('$username'
         mysqli_query($conn, $register) or die ("<br>Invalid Query");
 
 
-    ?>  <div class='confirmreg'>Account created!<br><button class='register' onclick="window.location.href='home.php'">Log in</button></div> <?php
+    ?> <script>  $("#hideform").hide(); $(".back2home").hide();</script> <div class='confirmreg'>Account created!<br><button class='register' onclick="window.location.href='home.php'">Log in</button></div> <?php
     
      
  mysqli_close($conn);
@@ -338,11 +339,11 @@ $register="INSERT INTO users(username, email, password, name) VALUES('$username'
 
 ?>
 
-     <div class="back2home"><a href="home.php">Already have an account? Log In</a></div>
+   
    
     </div>
             
-        </div>
+  
                     
         </div>
                 </article>

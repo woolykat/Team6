@@ -8,6 +8,7 @@ line-height: 1.5em;
   margin:0 auto;
     text-align:center;
   max-width:1080px;
+    
  
 }
 #container{
@@ -34,15 +35,17 @@ height: 100vh;
 color: white;
     text-align:center;
     max-width:600px;
-    line-height:50px;
+    line-height:90px;
 }
 
 .searchresults a{
 color: white;
+    text-decoration:none;
+    color:
 
 }
 .searchresults span {
-    text-align: center;
+    text-align: left;
     line-height:1em;
     font-size:18px;
     padding-left: 5%;
@@ -50,10 +53,6 @@ color: white;
 }
 
 
-input[type=submit]:hover {
-    background-color: #45a049;
-}
-  
 
 
 #submitbutton{
@@ -156,7 +155,7 @@ text-align: center;
 
 }
 
-/*******RESPONSIVE MEDIA QUERY************/
+/*******RESPONSIVE MEDIA QUERY 960************/
 
 
 @media screen and (max-width:960px){
@@ -165,10 +164,8 @@ text-align: center;
     height:500px;
 
 }
-    .gallery {
-    width: 200px;
-    height:146px;
-}
+
+    
     .searchresults{
     font-size:15;
     }
@@ -178,7 +175,7 @@ font-size:10;
 }
     p{
     font-size: 15;
-        padding:5px;
+        padding: 0 80px;
         line-height: 1.2em;
     }
     #didYouKnow p {
@@ -188,3 +185,34 @@ text-align: center;
 }
 }
 
+
+/*******RESPONSIVE MEDIA QUERY 768************/
+@media screen and (max-width:768px){
+
+    .gallery {
+    padding-top:30px;
+    width: 300px;
+    height:246px;
+}
+    
+    p{
+    font-size: 15;
+        line-height: 1.2em;
+    }
+    #didYouKnow p {
+        font-size: 15;
+text-align: center;
+
+}
+}
+
+/*******RESPONSIVE MEDIA QUERY 480************/
+@media screen and (max-width:480px){
+     p{
+    font-size: 15;
+         padding: 0 50px;
+        line-height: 1.2em;
+    } 
+    
+    
+}

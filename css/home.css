@@ -33,11 +33,9 @@ body{
 
 .confirmreg{
     border-radius:20px;
-    height:400px;
-
-    transition: visibility 0s 2s, opacity 2s linear;
-    
+    transition: visibility 0s 2s, opacity 2s linear;  
 }
+
 #rightSplit, #rightSplitC {
    background-color: #F4CB01;
     border-left:10px solid #F4CB01;
@@ -49,13 +47,14 @@ body{
 }
 
 
-
 .verticalCenter{
   margin-top:45%;  
-
-    font-size:20px;
-    
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    font-size:20px; 
 }
+
 .register {
  background-color:white;
     border:none;
@@ -91,7 +90,7 @@ h2 {
    letter-spacing:5px;
     margin-top:0px;
     margin-bottom:0px;
-    margin-right:30px;
+    margin-left:60px;
 }
 
 
@@ -264,7 +263,7 @@ header {
 }
 
 .arrow {
-      padding-top:450px;
+      padding-top:70px;
       text-align: center; 
 }
 
@@ -285,26 +284,88 @@ header {
 
 table{
     text-align:center;
+    margin:0 auto;
     
+}
+#hideform{
+    text-align:center;
+    margin:0 auto;
 }
 
 
 /****MEDIA QUERY******/
 
-@media only screen and (max-width: 600px) {
+
+
+
+@media only screen  and (max-width : 1440px)  {
+    input[type=text], input[type=password] {
+      min-width:300px;  
+      margin-right:50px;
+    }
+    
+    
+#usernamev, #usernamev2, #emailv, #emailv2, #fnv, #passwordv, #pv2, #bv, #rv, #rv2, #uv, #uv2, #ev, #pv {
+    font-weight: 200;
+    line-height:0px;
+    font-size: 10px;
+    margin:-5px;
+    margin-left:5px;
+ }
+    
+input[type=submit] {
+    width:280px;
+     margin-right:20px;
+}
+    
+.verticalCenter {
+    margin-top:50px;
+}
+ 
+#womanOpportunity {
+    float:none;
+    margin-left:65px;
+}
+    
+
+#womanTrack {
+    float:none;
+    margin-left:65px;
+}
+    
+#rewardIcons img {
+    width:260px;
+    height:200px;
+    display:inline;
+    margin-left:10px;
+}
+    
+h2 {
+   font-family: 'Oswald', sans-serif;
+   font-size: 50px;
+   color: #000;
+   letter-spacing:5px;
+    margin-top:0px;
+    margin-bottom:0px;
+    margin-left:60px;
+}
+
+        
+}
+
+@media only screen and (max-width: 960px) {
 header {
    padding-right:0%;
-   background-image:url('../images/bGimage.png');
-    width:100%;
     padding:0px;
     height:620px;
-    /*padding-right:600px;*/
 }
+    
+
 
 header h1{
     padding-top:55%;
     font-size:25vmin;
-    }
+}
  
 #container{
    width:100%;
@@ -314,7 +375,7 @@ header h1{
 #rightSplit {
   position:absolute;
   width: 100%;
-  margin-top:4300px;
+  margin-top:3700px;
  height: 120vh;
 }
     
@@ -322,17 +383,21 @@ header h1{
 #rightSplitC {
     position:absolute;
   width: 100%;
-  margin-top:4190px;
+  margin-top:4110px;
  height: 140vh;
+    
 }
     
 #womanTrack img {
-      height:250px;
-     width:330px;   }
+    height:250px;
+     width:100%;
+    float:left;
+}
 
 #womanOpportunity img {
-     height:250px;
-     width:330px; 
+    height:250px;
+    width:100%; 
+    float:left;
 }
     
 #womanOpportunity{
@@ -345,7 +410,9 @@ header h1{
     
     
 #leftSplit p {
-  padding:10px; 
+  padding:0px; 
+  font-size:18px;
+    float:none;
 }
     
 #trackSection {
@@ -357,9 +424,10 @@ header h1{
     }
     
 h2 {
-   font-size:50px;
+   font-size:35px;
     padding-top:100px;
     padding-bottom:60px;
+    margin:0px;
 }
     
 input[type=text], input[type=password] {
@@ -390,23 +458,6 @@ input[type=submit] {
 
 }
 
-@media only screen  and (max-width : 1440px)  {
-    input[type=text], input[type=password] {
-      min-width:300px;  
-      margin-right:50px;
-    }
-    
-input[type=submit] {
-    width:280px;
-     margin-right:20px;
-}
-    
-.verticalCenterC {
-    margin-top:50px;
-}
-    
-    
-}
 
 
 
@@ -421,4 +472,8 @@ input[type=submit] {
 
 #errorred{
     color:red;
+}
+
+#trackSection p {
+     max-width:800px;
 }

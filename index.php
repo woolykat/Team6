@@ -42,6 +42,8 @@
    <body>
       <div id="container">
       <header>
+		  
+		 
          <div class="nav" id="MyNav">
             <ul class="titlelist">
                <li> <img src="media/logo.png" class="logo"><span class="logotitle">Volunteer Track</span></li>
@@ -69,8 +71,8 @@
          <h2>Search For Opportunities </h2>
          <div class="search">
             <form action="" method="post" onsubmit="return validateForm()" name="searchform">
-               <input type="text" name="search" placeholder="Enter a location, town, or keyword e.g. animals"/>
-               <input type="submit" name="submit" value="Search"/>
+               <input type="text" name="search" placeholder="Enter a location, town, or keyword e.g. animals"/><br>
+               <input type="submit" name="submit" value="Search" id="searchbutton"/>
             </form>
          </div>
          <div class="searchresults">
@@ -79,20 +81,20 @@
                
                $search=$_POST['search'];
                
-               $query="SELECT * FROM opportunity WHERE keywords LIKE '%".$search."%'";
+               $query1="SELECT * FROM opportunity WHERE keywords LIKE '%".$search."%'";
                
-               $result= mysqli_query ($conn, $query)
+               $result1= mysqli_query ($conn, $query1)
                or die ('Invalid Query'); 
                
                
-               if (mysqli_num_rows($result) > 0) {
-                  while($row=mysqli_fetch_assoc($result)) {
+               if (mysqli_num_rows($result1) > 0) {
+                  while($row1=mysqli_fetch_assoc($result1)) {
                       
                      
                     //  echo "opportunity name: " . $row["opportunity_name"]. "<br/>";
                        ?>
-            <a href="./opportunity.php?data=<?php echo $row["opportunityID"]; ?>"><?php echo $row["opportunity_name"]; ?></a><br /><span>
-            <?php echo $row["location"]; echo "</span><br/>";
+            <a href="./opportunity.php?data=<?php echo $row1["opportunityID"]; ?>"><?php echo $row1["opportunity_name"]; ?></a><br /><span>
+            <?php echo $row1["location"]; echo "</span><br/>";
                }
                
                }
@@ -103,7 +105,7 @@
                }
                 
                
-               mysqli_close ($conn);
+           
                 }
                
                ?>  
@@ -117,10 +119,11 @@
                <div class="centeredGallery">
                   <ul class="galleryImages">
                      <?php
-                        include "php/base.php";
+                        
                         $todaysdate=date("Ymd");
                         $sql = "SELECT featured_image,featured_name,website FROM featuredcamps WHERE start_date<= ".$todaysdate." AND expiry_date>".$todaysdate."";
-                        $sth = $conn->query($sql);
+                        $sth = mysqli_query ($conn, $sql)
+               or die ('Invalid Query'); 
                         
                           while($result=mysqli_fetch_array($sth)) { ?>
                      <li>

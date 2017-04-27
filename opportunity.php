@@ -47,10 +47,13 @@ if(!$_SESSION['login']){
             </div>
 
         <div id="container">
-        <main>
+            
+  <div class="centerbutton"><button class="register" onclick="window.location.href='index.php'">Back</button></div>
+            
+        <div class="main">
      
         <div class="opportunitypage">
-   
+ 
         <?php
 
 
@@ -114,7 +117,7 @@ if (mysqli_num_rows($result3) > 0) {
 
          ?>
             <a href="mailto:<?php echo $row3["email"];  ?>">
-                    <button id="buttoncontact"type="button" value="Email Us">Contact</button>
+                    <button class="register"type="button" value="Email Us">Contact</button>
             
 </a>
 
@@ -122,7 +125,7 @@ if (mysqli_num_rows($result3) > 0) {
             
        <?php }} mysqli_close ($conn); ?>
          
-        </main>
+        </div>
         
       
         </div>

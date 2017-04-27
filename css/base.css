@@ -161,7 +161,7 @@ a:active{
 
 /* Style The Dropdown Button */
 .dropbtn {
-    background-color: #4CAF50;
+
     color: white;
     font-size: 16px;
     border: none;
@@ -201,9 +201,9 @@ a:active{
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-}
+
+
+
 input[type=text], select {
     width: 70%;
     padding: 12px 20px;
@@ -216,21 +216,60 @@ input[type=submit] {
     text-align:center;
     margin:0 auto;
     width: 400px;
-    background-color: #4CAF50;
     color: white;
     font-size:16px;
     padding: 14px 20px;
-
     border: none;
+    height:45px;
     border-radius: 4px;
     cursor: pointer;
+    background-color: #47BEBD;
+    -webkit-box-shadow: 7px 6px 30px 1px rgba(235,230,235,1);
+-moz-box-shadow: 7px 6px 30px 1px rgba(235,230,235,1);
+box-shadow: 7px 6px 30px 1px rgba(235,230,235,1);
 }
+
+input[type=submit]:hover{
+   background-color:#97e5e4;
+-webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+    
+}
+
+
+#searchbutton {
+    text-align:center;
+    margin:0 auto;
+    margin-top:10px;
+    width: 400px;
+    color: white;
+    font-size:16px;
+    padding: 14px 20px;
+    border: none;
+    height:45px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #47BEBD;
+   -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+#searchbutton:hover{
+   background-color:#97e5e4;
+-webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+    
+}
+
+
+
 
 
 @media screen and (max-width:960px){
 
 input[type=submit] {
-background-color: #4CAF50;
     width: 200px; 
 
 }

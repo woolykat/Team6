@@ -271,10 +271,11 @@ $(function() {
                 <article>
     <div id="rightSplitC">
         <div class="charitylog"><a href="register.php">Not a business? Register as a volunteer</a></div>
-        <div class="verticalCenterC">
+        <div class="verticalCenter">
     <div class="header">
         
 <div id="loginform">
+     <div id="hideform">
      <table><tr><td><img src="media/logo.png" width="100px"/></td></tr>
          <tr><td><h3>Create a Business account</h3></td></tr>
     
@@ -330,7 +331,7 @@ $(function() {
  
         <tr><td> <input type="submit" name="submit" value="Register" id="hide"></td></tr>
      </table>
-            </form>
+            </form></div>
        
             
 <?php
@@ -349,15 +350,17 @@ $register="INSERT INTO charity_user(username, email, password, charity_name, cha
         mysqli_query($conn, $register) or die ("<br>Invalid Query");
 
 
-    ?>  <div class='confirmreg'>Account created!<br><button class='register' onclick="window.location.href='home.php'">Log in</button></div> <?php
+    ?> 
     
-     
+   <script>  $("#hideform").hide(); $(".back2home").hide();</script>  <div class='confirmreg'>Account created!<br><button class='register' onclick="window.location.href='home.php'">Log in</button></div> <?php
+    
+ 
  mysqli_close($conn);
      }
  
 
 
-?>
+?> 
 
      <div class="back2home"><a href="home.php">Already have an account? Log In</a></div>
    

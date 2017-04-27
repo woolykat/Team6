@@ -258,9 +258,9 @@ if(!$_SESSION['login']){
             <td><input type="text" id="titlelv" name="titlelv" value="&#10008; Title must not be more than 40 letters" style="display: none;" Readonly="Readonly"/></td>
     
         
-            <!--titlenv (Number Validation must not be longer than-->
+        <!--    titlenv (Number Validation must not be longer than
             <td><input type="text" id="titlenv" name="titlelv" value=" &#10008; Can't contain only numbers" style="display: none;" Readonly="Readonly"/></td>
-        </tr>
+        </tr>-->
         
             
         <tr><th>Description Of Opportunity:<span class="star">*</span><br><span>Information about the role etc</span></p></th><td><textarea name="description" maxlength=1000 col="25" rows="5" onChange="validateDescription();"></textarea></td>

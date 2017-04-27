@@ -46,33 +46,6 @@ $(document).ready(function(){
 function printpage() {
     window.print();
 }
-    
-    function checkifempty() {
-        var cc = document.forms["updateform"]["charitychosen"].value; 
-        if (cc==""){
-          return false;  
-        }
-        var ah = document.forms["updateform"]["addhours"].value; 
-        if (ah==""){
-            return false;
-        }
-         
-        
-    }
-    
-      function checkifempty2(){
-        var ac = document.forms["addform"]["addcharity"].value; 
-        if (ac==""){
-          return false;  
-        }
-        var dh = document.forms["addform"]["defaultHours"].value; 
-        if (dh==""){
-            return false;
-        }
-         
-        
-    }
-    
 </script>
     
 </head>
@@ -128,30 +101,15 @@ if(mysqli_num_rows($resultregular)>0){
 		  <?php 
 		   $profileimg = "SELECT profile_image FROM users WHERE volunteerID=".$_SESSION['volunteer_ID']."";
                         $prf = $conn->query($profileimg);
-	 if (mysqli_num_rows($prf) > 0) {
+		 if (mysqli_num_rows($prf) > 0) {
     while($prof=mysqli_fetch_assoc($prf)) {
-        
-          if ($prof['profile_image']==""){
-              ?>
-           <li><p><?php echo '<img src="media/profile.png"class="profilepic" style="border-radius:50%;width:150px;height:150px;"/>'; ?><br><br><span><?php echo $_SESSION['login_volunteer']; ?></span><br></p></li>
-         <li><p><img src='media/star.png' height='70px'/><br>
- 
-         <?php
-        }
-        else{
-        
+		  
 		  ?>
-           <li><p><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $prof['profile_image'] ).'"class="profilepic" style="border-radius:50%;width:150px;height:150px;"/>'; ?><br><span><?php echo $_SESSION['login_volunteer']; ?></span><br><br></p></li>
+           <li><p><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $prof['profile_image'] ).'"class="profilepic" style="border-radius:50%;width:100px;"/>'; ?><br><br><span><?php echo $_SESSION['login_volunteer']; ?></span><br><br></p></li>
          <li><p><img src='media/star.png' height='70px'/><br>
  
          <?php
-        
-        }
-      
-	}
-     }
-         
-   
+	}}
          
 $query="SELECT sum(hours) FROM recordhours WHERE volunteerID= ".$_SESSION['volunteer_ID']."";
 
@@ -199,14 +157,14 @@ if (mysqli_num_rows($resultorg) > 0) {
            </ul>
             </div>
            <div id="editprofile">
-           <button class="register" onclick="window.location.href='editvolunteer.php'">Edit Profile</button></div>
+           <button class="register" onclick="window.location.href='editprofile.php'">Edit Profile</button></div>
            <div id="ProfileMenu">
                 
              
       <h3>Update Hours</h3>
       
       
-          <form action="" method="post" onsubmit="return checkifempty();" name="updateform">
+          <form action="" method="post">
           <select id="optionHours" name="charitychosen" class="form-control charity-select">
                <option value="" disabled selected>Select the charity to add hours</option>
           <?php
@@ -282,7 +240,7 @@ mysqli_query($conn ,$updatequery) or die('Sorry! An internal error occurred: Inv
         
     <br>
          <h3>Add an organisation</h3>
-        <form action="php/addcharity.php" method="post" name="addform" onsubmit="return checkifempty2();">
+        <form action="php/addcharity.php" method="post">
           <select name="addcharity" class="form-control charity-select" >
         <option value="" disabled selected>Select the charity to add...</option>
                
@@ -360,28 +318,28 @@ while ($row3 = mysqli_fetch_array($result3))
 <svg width="0" height="0">
 <defs>
   <linearGradient id="cl1" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1">
-    <stop stop-color="#F4CB01"/>
-    <stop offset="100%" stop-color="#F4CB01"/>
+    <stop stop-color="#DA1B3A"/>
+    <stop offset="100%" stop-color="#DA1B3A"/>
   </linearGradient>
   <linearGradient id="cl2" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0" y2="1">
-    <stop stop-color="#F4CB01"/>
-    <stop offset="100%" stop-color="#F4CB01"/>
+    <stop stop-color="#DA1B3A"/>
+    <stop offset="100%" stop-color="#DA1B3A"/>
   </linearGradient>
   <linearGradient id="cl3" gradientUnits="objectBoundingBox" x1="1" y1="0" x2="0" y2="1">
-    <stop stop-color="#F4CB01"/>
-    <stop offset="100%" stop-color="#F4CB01"/>
+    <stop stop-color="#DA1B3A"/>
+    <stop offset="100%" stop-color="#DA1B3A"/>
   </linearGradient>
   <linearGradient id="cl4" gradientUnits="objectBoundingBox" x1="1" y1="1" x2="0" y2="0">
-    <stop stop-color="#F4CB01"/>
-    <stop offset="100%" stop-color="#47BEBD"/>
+    <stop stop-color="#DA1B3A"/>
+    <stop offset="100%" stop-color="#DA1B3A"/>
   </linearGradient>
   <linearGradient id="cl5" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="0" y2="0">
-    <stop stop-color="#47BEBD"/>
-    <stop offset="100%" stop-color="#47BEBD"/>
+    <stop stop-color="#DA1B3A"/>
+    <stop offset="100%" stop-color="#DA1B3A"/>
   </linearGradient>
   <linearGradient id="cl6" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="1" y2="0">
-    <stop stop-color="#47BEBD"/>
-    <stop offset="100%" stop-color="#47BEBD"/>
+    <stop stop-color="#DA1B3A"/>
+    <stop offset="100%" stop-color="#DA1B3A"/>
   </linearGradient>
 </defs>
 </svg>
@@ -431,28 +389,28 @@ if(mysqli_num_rows($result2)>1){
 <svg width="0" height="0">
 <defs>
   <linearGradient id="cl1" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1">
-    <stop stop-color="#F4CB01"/>
-    <stop offset="100%" stop-color="#F4CB01"/>
+    <stop stop-color="#DA1B3A"/>
+    <stop offset="100%" stop-color="#DA1B3A"/>
   </linearGradient>
   <linearGradient id="cl2" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0" y2="1">
-    <stop stop-color="#F4CB01"/>
-    <stop offset="100%" stop-color="#F4CB01"/>
+    <stop stop-color="#DA1B3A"/>
+    <stop offset="100%" stop-color="#DA1B3A"/>
   </linearGradient>
   <linearGradient id="cl3" gradientUnits="objectBoundingBox" x1="1" y1="0" x2="0" y2="1">
-    <stop stop-color="#F4CB01"/>
-    <stop offset="100%" stop-color="#F4CB01"/>
+    <stop stop-color="#DA1B3A"/>
+    <stop offset="100%" stop-color="#DA1B3A"/>
   </linearGradient>
   <linearGradient id="cl4" gradientUnits="objectBoundingBox" x1="1" y1="1" x2="0" y2="0">
-    <stop stop-color="#F4CB01"/>
-    <stop offset="100%" stop-color="#47BEBD"/>
+    <stop stop-color="#DA1B3A"/>
+    <stop offset="100%" stop-color="#DA1B3A"/>
   </linearGradient>
   <linearGradient id="cl5" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="0" y2="0">
-    <stop stop-color="#47BEBD"/>
-    <stop offset="100%" stop-color="#47BEBD"/>
+    <stop stop-color="#DA1B3A"/>
+    <stop offset="100%" stop-color="#DA1B3A"/>
   </linearGradient>
   <linearGradient id="cl6" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="1" y2="0">
-    <stop stop-color="#47BEBD"/>
-    <stop offset="100%" stop-color="#47BEBD"/>
+    <stop stop-color="#DA1B3A"/>
+    <stop offset="100%" stop-color="#DA1B3A"/>
   </linearGradient>
 </defs>
 </svg>
@@ -462,13 +420,11 @@ if(mysqli_num_rows($result2)>1){
          
   
         
-   <div id="print">
-           <button class="register" onclick="printpage()">Print this page</button>
-              </div>
+   
   
   <hr>
       
-      <h3>Rewards</h3>
+      <h2>Rewards</h2>
       <div class="VolunteerProfileMedals">
       <?php  
 
@@ -483,7 +439,7 @@ if ($totalhours >= 10){
 if ($totalhours <10 ){
 ?>
       <ul>
-         <li> <div class=figure><img src="media/unknown.png"><span><p class="silver">Complete 10 hours</p></span></div></li>
+         <li> <div class=figure><img src="media/unknown.png"><span><p>Complete 10 hours</p></span></div></li>
           <?php 
 
 } 
@@ -521,13 +477,13 @@ if ($totalhours <10 ){
                                       
                                           if ($totalhours < 50){
           ?>
-          <li> <div class=figure><img src="media/unknown.png"><p class="silver">Complete 50 hours</p></div></li>
+          <li> <div class=figure><img src="media/unknown.png"><p>Complete 50 hours</p></div></li>
           <?php
               
           }
                   if ($totalhours < 100){
           ?>
-          <li> <div class=figure><img src="media/platniumunknown.png"><p class="silver">Complete 100 hours</p></div></li>
+          <li> <div class=figure><img src="media/platniumunknown.png"><p>Complete 100 hours</p></div></li>
           <?php
               
           }
@@ -535,7 +491,7 @@ if ($totalhours <10 ){
 ?>
           </ul>
       </div>
-          
+           <button onclick="printpage()">Print this page</button>
    <?php }
           else{
               ?>
